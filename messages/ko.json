@@ -1,0 +1,201 @@
+{
+  "Metadata": {
+    "title": "STEADYVIEW — 정밀 검사 솔루션",
+    "description": "2D·3D 머신비전과 산업용 X-ray 검사장비를 개발·공급하는 B2B 기업 STEADYVIEW."
+  },
+  "Nav": {
+    "home": "홈",
+    "about": "회사소개",
+    "aboutOverview": "STEADYVIEW 소개",
+    "ceo": "CEO 인사말",
+    "location": "찾아오시는 길",
+    "products": "제품",
+    "product2d": "2D 비전",
+    "product3d": "3D 비전",
+    "productXray": "X-ray",
+    "ir": "IR",
+    "contact": "견적문의"
+  },
+  "LanguageSwitcher": {
+    "label": "언어 선택",
+    "ko": "한국어",
+    "en": "English",
+    "zh": "中文"
+  },
+  "HomePage": {
+    "eyebrow": "정밀 검사 솔루션",
+    "tagline": "흔들림 없는 시야, 명확한 방향",
+    "intro": "STEADYVIEW는 2D·3D 머신비전과 산업용 X-ray 검사장비를 정밀하게 설계하여, 2차전지·반도체 제조 현장의 품질을 지킵니다. 축적된 광학 기술로 놓치기 쉬운 미세 결함까지 정확하게 검출합니다.",
+    "keywordPrecision": "정밀 검사",
+    "keywordVision": "머신비전",
+    "keywordXray": "산업용 X-ray",
+    "cta": "견적문의 하기",
+    "productsTitle": "제품 바로가기",
+    "productsSub": "검사 목적에 맞는 솔루션을 확인하세요.",
+    "ctaBannerTitle": "검사 장비 도입을 검토 중이신가요?",
+    "ctaBannerBody": "제품 사양과 적용 사례를 확인하고 맞춤 견적을 요청하세요.",
+    "ctaBannerButton": "견적문의 하기 →"
+  },
+  "HomeHero": {
+    "slide1Kicker": "2차전지 검사",
+    "slide1Title": "2D 머신비전으로 잡아내는 미세 결함",
+    "slide1Desc": "2차전지 캡·전극 공정의 표면 결함을 고속·고정밀로 검사합니다.",
+    "slide1Cta": "2D 비전 자세히 보기",
+    "slide2Kicker": "산업용 X-ray 검사",
+    "slide2Title": "비파괴로 들여다보는 내부 구조",
+    "slide2Desc": "X-ray CT로 2차전지 내부 결함과 이물질을 비파괴로 검사합니다.",
+    "slide2Cta": "X-ray 자세히 보기",
+    "slide3Kicker": "3D 반도체 검사",
+    "slide3Title": "3D 형상 측정의 새로운 기준",
+    "slide3Desc": "고정밀 3D 형상 측정으로 반도체 범프·외관 결함을 검출합니다.",
+    "slide3Cta": "3D 비전 자세히 보기",
+    "prev": "이전 슬라이드",
+    "next": "다음 슬라이드",
+    "pause": "슬라이드 일시정지",
+    "play": "슬라이드 재생",
+    "goTo": "슬라이드 {index}로 이동"
+  },
+  "AboutPage": {
+    "kicker": "회사소개",
+    "heroIntro": "STEADYVIEW는 2D·3D 머신비전과 산업용 X-ray 검사장비로 정밀 검사의 신뢰를 만듭니다.",
+    "promiseSteadyTitle": "Steady (흔들림 없는 정확함)",
+    "promiseSteadyBody": "미세한 오차도 허용하지 않는 완벽한 3D 입체 분석과 내밀한 곳까지 투시하는 X-ray 기술로, 어떤 가혹한 제조 환경에서도 흔들리지 않는 최고의 검사 정확도를 보장합니다.",
+    "promiseViewTitle": "View (미래를 바라보는 시선)",
+    "promiseViewBody": "단순한 불량 검출을 넘어, 고객사의 생산성을 극대화하고 스마트 팩토리의 미래를 먼저 내다보는 선도적인 기술 파트너가 되겠습니다.",
+    "overviewTitle": "회사 개요",
+    "historyTitle": "연혁"
+  },
+  "CeoPage": {
+    "kicker": "회사소개",
+    "title": "CEO 인사말",
+    "greetingHello": "안녕하세요",
+    "intro": "주식회사 STEADYVIEW 대표이사 입니다.",
+    "body1": "오늘날 글로벌 제조업은 나노 단위의 미세 공정과 고도의 첨단 기술이 융합되며 그 어느 때보다 엄격한 품질 관리를 요구하고 있습니다. 아주 작은 결함 하나가 거대한 시스템의 안전을 좌우하는 시대, 완벽한 검사는 선택이 아닌 기업의 생존 전략입니다.",
+    "body2": "저희 STEADYVIEW(스테디뷰)는 이러한 시대적 요구에 부응하여, 인간의 눈을 넘어선 초정밀 머신비전 3D 및 X-ray 검사 솔루션을 제공하는 산업용 검사장비 전문 기업입니다.",
+    "promiseLead": "우리 회사의 이름인 'STEADYVIEW'에는 두 가지 확고한 약속이 담겨 있습니다.",
+    "promiseSteadyTitle": "Steady (흔들림 없는 정확함)",
+    "promiseSteadyBody": "미세한 오차도 허용하지 않는 완벽한 3D 입체 분석과 내밀한 곳까지 투시하는 X-ray 기술로, 어떤 가혹한 제조 환경에서도 흔들리지 않는 최고의 검사 정확도를 보장합니다.",
+    "promiseViewTitle": "View (미래를 바라보는 시선)",
+    "promiseViewBody": "단순한 불량 검출을 넘어, 고객사의 생산성을 극대화하고 스마트 팩토리의 미래를 먼저 내다보는 선도적인 기술 파트너가 되겠습니다.",
+    "body3": "우리는 외형의 화려함보다 기본에 충실한 기술력, 고객과의 변함없는 신뢰를 최우선으로 생각합니다. 끊임없는 R&D 투자와 독자적인 초정밀 이미지 프로세싱 기술을 바탕으로, 반도체, 배터리, 자동차 부품 등 대한민국과 글로벌 첨단 산업의 품질 표준을 한 단계 끌어올리겠습니다.",
+    "body4": "언제나 한결같은 시선으로 고객의 성공을 바라보며, 가장 신뢰할 수 있는 글로벌 탑티어(Top-tier) 검사 장비 파트너로 함께할 것을 약속드립니다.",
+    "closing": "STEADYVIEW의 흔들림 없는 도전에 앞으로도 따뜻한 관심과 성원을 부탁드립니다.",
+    "thanks": "감사합니다.",
+    "signatureCompany": "주식회사 STEADYVIEW",
+    "signatureName": "대표이사 김해찬",
+    "photoPlaceholder": "CEO 사진 (준비 중)"
+  },
+  "LocationPage": {
+    "kicker": "회사소개",
+    "title": "찾아오시는 길",
+    "subtitle": "방문 전 미리 연락 주시면 안내에 도움을 드리겠습니다.",
+    "addressTitle": "주소",
+    "copyAddress": "주소 복사",
+    "copied": "복사되었습니다",
+    "transportTitle": "오시는 방법",
+    "byCarTitle": "자가용 이용 시",
+    "byCarBody": "내비게이션에 회사명 또는 주소를 검색해 주세요. 방문객 주차 공간이 마련되어 있습니다.",
+    "byTransitTitle": "대중교통 이용 시",
+    "byTransitBody": "가장 가까운 지하철역·버스정류장에서 도보 또는 셔틀 이용이 가능합니다. 상세 경로는 방문 전 문의해 주세요.",
+    "mapNote": "지도는 안내용 예시이며, 정확한 위치는 방문 전 확인해 주세요.",
+    "mapUnavailable": "지도를 표시할 수 없습니다. 잠시 후 다시 시도해 주세요."
+  },
+  "ContactPage": {
+    "kicker": "견적문의",
+    "title": "견적문의",
+    "subtitle": "제품 및 도입 관련 문의사항을 남겨주시면 빠르게 답변드리겠습니다.",
+    "directEmailNote": "더 자세한 문의는 sales@steadyview.co.kr로 직접 메일 주셔도 됩니다.",
+    "companyLabel": "회사명",
+    "contactNameLabel": "담당자명",
+    "phoneLabel": "연락처",
+    "phonePlaceholder": "010-0000-0000",
+    "emailLabel": "이메일",
+    "emailPlaceholder": "name@company.com",
+    "interestLabel": "관심 제품",
+    "interestPlaceholder": "선택해 주세요",
+    "interest2d": "2D 비전",
+    "interest3d": "3D 비전",
+    "interestXray": "X-ray",
+    "interestOther": "기타",
+    "messageLabel": "문의 내용",
+    "messagePlaceholder": "문의하실 내용을 10자 이상 입력해 주세요.",
+    "consentLabel": "개인정보 수집·이용에 동의합니다.",
+    "consentDetail": "수집 항목: 회사명, 담당자명, 연락처, 이메일, 문의 내용 / 목적: 견적문의 응대 / 보유 기간: 응대 완료 후 즉시 파기",
+    "submit": "문의 보내기",
+    "submitting": "전송 중...",
+    "errorRequired": "필수 입력 항목입니다.",
+    "errorPhoneInvalid": "올바른 연락처 형식이 아닙니다.",
+    "errorEmailInvalid": "올바른 이메일 형식이 아닙니다.",
+    "errorMessageMin": "문의 내용을 10자 이상 입력해 주세요.",
+    "errorConsentRequired": "개인정보 수집·이용에 동의해 주세요.",
+    "successTitle": "문의가 접수되었습니다",
+    "successBody": "빠른 시일 내에 담당자가 연락드리겠습니다.",
+    "successClose": "확인",
+    "failureTitle": "전송에 실패했습니다",
+    "failureBody": "잠시 후 다시 시도해 주시거나, 이메일로 직접 문의해 주세요.",
+    "failureRetry": "다시 시도"
+  },
+  "IrPage": {
+    "kicker": "IR",
+    "title": "IR DATA",
+    "subtitle": "투자자 및 이해관계자를 위한 재무·공시 자료입니다.",
+    "filterAll": "전체",
+    "filterFinancial": "재무",
+    "filterDisclosure": "공시",
+    "sortNewest": "최신순",
+    "sortOldest": "오래된순",
+    "colTitle": "제목",
+    "colCategory": "구분",
+    "colDate": "게시일",
+    "colDownload": "다운로드",
+    "download": "다운로드"
+  },
+  "ProductPage": {
+    "overviewLabel": "제품 개요",
+    "featuresTitle": "주요 특징",
+    "applicationsTitle": "적용 분야",
+    "galleryTitle": "이미지 갤러리",
+    "ctaTitle": "이 제품에 대해 더 알고 싶으신가요?",
+    "ctaBody": "상세 사양과 도입 사례를 상담받아 보세요.",
+    "ctaButton": "견적문의 하기",
+    "closeGallery": "갤러리 닫기",
+    "prevImage": "이전 이미지",
+    "nextImage": "다음 이미지",
+    "imageOf": "{current} / {total}"
+  },
+  "ProductsSummary": {
+    "product2d": {
+      "title": "2D 비전",
+      "summary": "고속 표면 검사로 2차전지·전자부품의 미세 결함을 검출합니다."
+    },
+    "product3d": {
+      "title": "3D 비전",
+      "summary": "고정밀 3D 형상 측정으로 반도체 범프·외관 결함을 검출합니다."
+    },
+    "productXray": {
+      "title": "X-ray",
+      "summary": "비파괴 X-ray 검사로 제품 내부 결함과 이물질을 판별합니다."
+    }
+  },
+  "Footer": {
+    "companyName": "주식회사 스테디뷰",
+    "addressLabel": "주소",
+    "address": "경기도 시흥시 광석천길 18 광양프런티어밸리8차지식산업센터 제B121호",
+    "phoneLabel": "대표번호",
+    "phone": "010-9240-9168",
+    "emailLabel": "이메일",
+    "email": "sales@steadyview.co.kr",
+    "rights": "© 2026 STEADYVIEW. All rights reserved.",
+    "privacy": "개인정보처리방침"
+  },
+  "MobileMenu": {
+    "open": "메뉴 열기",
+    "close": "메뉴 닫기"
+  },
+  "Common": {
+    "loading": "불러오는 중…",
+    "error": "오류가 발생했습니다.",
+    "retry": "다시 시도",
+    "skipToContent": "본문으로 바로가기"
+  }
+}

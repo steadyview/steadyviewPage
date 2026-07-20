@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * 시맨틱 디자인 토큰 — docs/brand-identity.md §2.3
+ * 라이트 기본값 → prefers-color-scheme(dark) → 명시적 data-theme 오버라이드.
+ */
+:root {
+  --font-sans: system-ui, -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --bg: #fdfdfb;
+  --surface: #ffffff;
+  --surface-muted: #f7f6f0;
+  --border: #dad9cf;
+  --text: #1c1c1a;
+  --text-muted: #6b6b64;
+  --primary: #4a7324;
+  --primary-hover: #3a5a1e;
+  --accent: #cfa53e;
+  --ring: #5f8134;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14150f;
+    --surface: #1e201a;
+    --surface-muted: #262922;
+    --border: #33362c;
+    --text: #ecebe3;
+    --text-muted: #b8b8ad;
+    --primary: #82a353;
+    --primary-hover: #a6c07e;
+    --accent: #dcba55;
+    --ring: #82a353;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14150f;
+  --surface: #1e201a;
+  --surface-muted: #262922;
+  --border: #33362c;
+  --text: #ecebe3;
+  --text-muted: #b8b8ad;
+  --primary: #82a353;
+  --primary-hover: #a6c07e;
+  --accent: #dcba55;
+  --ring: #82a353;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}

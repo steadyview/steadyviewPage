@@ -1,0 +1,765 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Next.js 프로젝트 초기 설정 및 기술 스택 구성",
+        "description": "Next.js 14+ App Router, TypeScript, Tailwind CSS 기반 프로젝트 생성 및 핵심 의존성 설치",
+        "details": "1. `npx create-next-app@latest steadyview-homepage --typescript --tailwind --app --src-dir=false --import-alias='@/*'` 실행\n2. 필수 패키지 설치:\n   - `next-intl` (다국어 지원)\n   - `react-hook-form` + `zod` (폼 유효성 검사)\n   - `resend` (이메일 전송)\n   - `swiper` 또는 `embla-carousel-react` (슬라이더)\n3. 프로젝트 구조 설정:\n   - `app/[locale]/` 구조 생성 (ko, en, zh)\n   - `components/` 폴더 생성\n   - `content/` 폴더 생성 (정적 콘텐츠)\n   - `messages/` 폴더 생성 (ko.json, en.json, zh.json)\n   - `public/images/`, `public/ir/` 폴더 생성\n4. `next.config.js`에 next-intl 설정 추가\n5. `tailwind.config.ts`에 커스텀 색상/폰트 설정\n6. `.env.local` 파일 생성 및 환경변수 템플릿 추가\n7. `tsconfig.json` path alias 확인",
+        "testStrategy": "- `npm run dev` 실행 후 localhost:3000 접속 확인\n- TypeScript 컴파일 에러 없음 확인\n- Tailwind CSS 적용 확인 (간단한 클래스 테스트)\n- 각 로케일 경로 접근 가능 확인 (/ko, /en, /zh)",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "create-next-app으로 프로젝트 초기화",
+            "description": "App Router + TypeScript + Tailwind 기반으로 Next.js 프로젝트를 생성한다.",
+            "dependencies": [],
+            "details": "create-next-app(App Router, TypeScript, Tailwind, import alias @/*)으로 초기화. package.json 스크립트(dev/build/start/lint) 확인, tsconfig strict 모드 활성화.",
+            "status": "done",
+            "testStrategy": "npm run dev 구동 및 기본 페이지 렌더링 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.448Z"
+          },
+          {
+            "id": 2,
+            "title": "핵심 의존성 설치",
+            "description": "i18n·폼·이메일·슬라이더 패키지를 설치한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "next-intl, react-hook-form + zod, resend, swiper 또는 embla-carousel-react 설치 및 버전 정리.",
+            "status": "done",
+            "testStrategy": "설치 후 빌드 오류 없이 import 되는지 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.453Z"
+          },
+          {
+            "id": 3,
+            "title": "프로젝트 폴더 구조 스캐폴딩",
+            "description": "PRD 8.2 폴더 구조를 생성한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "app/[locale]/, app/api/, components/, content/, messages/(ko/en/zh.json), public/(images, ir) 디렉터리 생성 및 placeholder/.gitkeep 배치.",
+            "status": "done",
+            "testStrategy": "디렉터리 트리가 PRD 8.2와 일치하는지 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.458Z"
+          },
+          {
+            "id": 4,
+            "title": "설정 파일 구성 (next/tailwind/tsconfig)",
+            "description": "핵심 설정 파일을 정비한다.",
+            "dependencies": [
+              2,
+              3
+            ],
+            "details": "next.config.js에 next-intl 플러그인, tailwind.config.ts 커스텀 색상/폰트 토큰(placeholder), tsconfig path alias 확인.",
+            "status": "done",
+            "testStrategy": "설정 반영 후 빌드 및 alias import 동작 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.463Z"
+          },
+          {
+            "id": 5,
+            "title": "환경변수 템플릿 정비",
+            "description": ".env 템플릿과 gitignore를 구성한다.",
+            "dependencies": [
+              1
+            ],
+            "details": ".env.local/.env.example에 RESEND_API_KEY, CONTACT_RECIPIENT_EMAIL, 지도 API 키 등 정의. .gitignore에 .env 포함 확인.",
+            "status": "done",
+            "testStrategy": "환경변수 로딩 및 .env가 커밋에서 제외되는지 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.467Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T01:43:30.467Z"
+      },
+      {
+        "id": "2",
+        "title": "다국어(i18n) 라우팅 및 번역 시스템 구축",
+        "description": "next-intl을 활용한 3개 언어(ko/en/zh) 지원 시스템 구축 및 기본 UI 텍스트 번역 파일 생성",
+        "details": "1. `i18n.ts` 설정 파일 생성:\n   - locales: ['ko', 'en', 'zh']\n   - defaultLocale: 'ko'\n   - localeDetection 설정\n2. `middleware.ts` 생성:\n   - createMiddleware from next-intl\n   - 언어 자동 감지 및 리다이렉트 로직\n3. `app/[locale]/layout.tsx` 생성:\n   - NextIntlClientProvider 래핑\n   - 메타데이터 다국어 처리\n   - hreflang 태그 추가\n4. 번역 파일 생성 (`messages/`):\n   - `ko.json`: 헤더, 푸터, 공통 UI 텍스트\n   - `en.json`: 영어 번역\n   - `zh.json`: 중국어 번역 (간체 가정)\n5. 언어 선택기 컴포넌트 생성 (`components/LanguageSwitcher.tsx`):\n   - 현재 언어 표시\n   - 드롭다운 또는 버튼으로 언어 전환\n   - 쿠키에 선택 언어 저장",
+        "testStrategy": "- 각 로케일 URL 접근 시 올바른 번역 표시 확인\n- 언어 전환 시 URL 및 콘텐츠 변경 확인\n- 브라우저 Accept-Language 헤더에 따른 자동 리다이렉트 테스트\n- 쿠키에 선택 언어 저장 확인\n- 존재하지 않는 로케일 접근 시 404 또는 기본 언어로 리다이렉트 확인",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "i18n 설정 파일 구성",
+            "description": "next-intl 로케일 설정을 만든다.",
+            "dependencies": [],
+            "details": "i18n.ts에 locales(['ko','en','zh']), defaultLocale('ko'), getRequestConfig로 메시지 로딩 연결, localeDetection 설정.",
+            "status": "done",
+            "testStrategy": "서버 컴포넌트에서 메시지 로딩 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.477Z"
+          },
+          {
+            "id": 2,
+            "title": "middleware 언어 감지·리다이렉트",
+            "description": "미들웨어로 로케일 라우팅을 처리한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "next-intl createMiddleware, matcher 설정, Accept-Language 자동 감지, 미지원 로케일 처리.",
+            "status": "done",
+            "testStrategy": "브라우저 언어별 접근 시 올바른 로케일 라우팅 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.482Z"
+          },
+          {
+            "id": 3,
+            "title": "app/[locale]/layout.tsx 구성",
+            "description": "로케일 레이아웃과 provider를 구성한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "NextIntlClientProvider 래핑, generateStaticParams, html lang 속성, 메타데이터 다국어 처리, hreflang 태그.",
+            "status": "done",
+            "testStrategy": "각 로케일 경로에서 lang 속성/provider 정상 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.488Z"
+          },
+          {
+            "id": 4,
+            "title": "번역 파일 생성 (ko/en/zh)",
+            "description": "공통 UI 텍스트 번역 파일을 만든다.",
+            "dependencies": [
+              1
+            ],
+            "details": "messages/{ko,en,zh}.json에 헤더/푸터/공통 네임스페이스 키 정의(ko 작성, en/zh 동기화). 누락 키 폴백 정책.",
+            "status": "done",
+            "testStrategy": "각 로케일에서 키 값 반환 및 폴백 동작 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.492Z"
+          },
+          {
+            "id": 5,
+            "title": "LanguageSwitcher 컴포넌트",
+            "description": "언어 선택기를 구현한다.",
+            "dependencies": [
+              2,
+              3
+            ],
+            "details": "현재 언어 표시, 동일 경로 유지하며 로케일 전환, 선택 언어 쿠키 저장(사용자 선택 우선).",
+            "status": "done",
+            "testStrategy": "언어 전환 후 현재 페이지 유지 및 선택 유지 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T01:43:30.496Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T01:43:30.496Z"
+      },
+      {
+        "id": "3",
+        "title": "공통 레이아웃 컴포넌트 구현 (헤더, 푸터, 네비게이션)",
+        "description": "GNB(글로벌 네비게이션 바), 푸터, 모바일 햄버거 메뉴를 포함한 전역 레이아웃 컴포넌트 개발",
+        "details": "1. `components/layout/Header.tsx` 생성:\n   - 로고 (링크: /[locale])\n   - 메인 메뉴: 회사소개(드롭다운: 소개/CEO/찾아오시는 길), 제품(드롭다운: 2D/3D/X-ray), IR, 견적문의\n   - 언어 선택기 통합\n   - 모바일: 햄버거 메뉴 아이콘\n   - sticky 헤더 (스크롤 시 상단 고정)\n2. `components/layout/MobileMenu.tsx` 생성:\n   - 오버레이 메뉴 (full screen)\n   - 아코디언 형태의 드롭다운\n   - 닫기 버튼\n3. `components/layout/Footer.tsx` 생성:\n   - 회사명, 주소, 연락처 (전화/팩스/이메일)\n   - 저작권 문구\n   - (선택) 개인정보처리방침 링크\n   - 다국어 번역 적용\n4. `app/[locale]/layout.tsx`에 Header, Footer 적용\n5. Tailwind로 반응형 디자인 구현 (breakpoints: sm, md, lg, xl)\n6. 접근성: ARIA labels, 키보드 네비게이션 지원",
+        "testStrategy": "- 데스크톱: 드롭다운 메뉴 hover/click 동작 확인\n- 모바일: 햄버거 메뉉 열기/닫기, 메뉴 항목 클릭 확인\n- 언어 전환 시 헤더/푸터 텍스트 변경 확인\n- 로고 클릭 시 메인 페이지로 이동 확인\n- 키보드 Tab 네비게이션 테스트\n- 스크린 리더로 접근성 검증 (NVDA/VoiceOver)",
+        "priority": "high",
+        "dependencies": [
+          "2"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Header/GNB 및 메인 메뉴",
+            "description": "헤더와 데스크톱 드롭다운 메뉴를 구현한다.",
+            "dependencies": [],
+            "details": "로고(홈 링크), 메뉴(회사소개/제품 드롭다운, IR, 견적문의), sticky 헤더, 활성 상태 표시, next-intl Link 사용.",
+            "status": "done",
+            "testStrategy": "메뉴 이동/드롭다운/활성 상태 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.881Z"
+          },
+          {
+            "id": 2,
+            "title": "언어 선택기 헤더 통합",
+            "description": "LanguageSwitcher를 헤더에 통합한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "헤더에 언어 선택기 배치, 전환 시 현재 경로 유지 및 쿠키 갱신(태스크 2 연동).",
+            "status": "done",
+            "testStrategy": "헤더에서 언어 전환 시 번역 반영 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.889Z"
+          },
+          {
+            "id": 3,
+            "title": "MobileMenu 오버레이",
+            "description": "모바일 햄버거 메뉴를 구현한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "full screen 오버레이, 아코디언 드롭다운, 닫기 버튼, 스크롤 잠금, 포커스 트랩, ESC 닫기.",
+            "status": "done",
+            "testStrategy": "모바일 열기/닫기, 포커스 트랩, 키보드 접근 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.897Z"
+          },
+          {
+            "id": 4,
+            "title": "Footer 구현",
+            "description": "공통 푸터를 구현한다.",
+            "dependencies": [],
+            "details": "회사명·주소·연락처(전화/팩스/이메일)·저작권, (선택)개인정보처리방침 링크, 다국어 번역, 반응형.",
+            "status": "done",
+            "testStrategy": "여러 페이지에서 푸터 정보 일관 표시 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.905Z"
+          },
+          {
+            "id": 5,
+            "title": "레이아웃 적용 및 접근성/반응형",
+            "description": "Header/Footer를 레이아웃에 적용하고 접근성을 반영한다.",
+            "dependencies": [
+              1,
+              3,
+              4
+            ],
+            "details": "app/[locale]/layout.tsx에 Header/Footer 적용, Tailwind 반응형(sm/md/lg/xl), ARIA 라벨·키보드 네비게이션.",
+            "status": "done",
+            "testStrategy": "반응형·키보드 탐색·스크린리더 접근성 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.925Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T02:39:46.925Z"
+      },
+      {
+        "id": "4",
+        "title": "메인 페이지 구현 (히어로 슬라이더 + 소개 섹션)",
+        "description": "자동 순환 이미지 슬라이더(2차전지/X-ray/3D 반도체), 회사 간단 소개, 제품 카드, 견적문의 CTA 구현",
+        "details": "1. `app/[locale]/page.tsx` 메인 페이지 생성\n2. `components/home/HeroSlider.tsx` 구현:\n   - Swiper 또는 Embla Carousel 사용\n   - 슬라이드 3개: \n     - 슬라이드 1: 2차전지 검사 (이미지 + 제목 + 설명 + CTA 버튼 → /products/2d-vision)\n     - 슬라이드 2: 산업용 X-ray 검사 (→ /products/xray)\n     - 슬라이드 3: 3D 반도체 검사 (→ /products/3d-vision)\n   - 자동재생 (5초 간격), 일시정지 버튼\n   - 화살표 네비게이션, 인디케이터 점\n   - 모바일: 스와이프 지원\n   - next/image로 이미지 최적화 (priority 설정)\n3. `components/home/IntroSection.tsx`: 회사 소개 문구 (1-2 문단)\n4. `components/home/ProductCards.tsx`: 3개 카드 (2D/3D/X-ray) 그리드 레이아웃\n5. `components/home/CtaBanner.tsx`: \"견적문의 하기\" 버튼 → /[locale]/contact\n6. 반응형 레이아웃, 애니메이션 효과 (fade-in)\n7. 다국어 번역 적용",
+        "testStrategy": "- 슬라이더 자동 순환 확인 (5초마다 전환)\n- 화살표 클릭/모바일 스와이프로 슬라이드 이동 확인\n- 일시정지/재생 버튼 동작 확인\n- 각 슬라이드 CTA 버튼 클릭 시 올바른 제품 페이지로 이동\n- 제품 카드 클릭 시 해당 제품 페이지로 이동\n- 견적문의 CTA 버튼 클릭 시 /contact로 이동\n- 이미지 로딩 성능 확인 (LCP < 2.5s)\n- 모바일/태블릿/데스크톱 반응형 확인",
+        "priority": "high",
+        "dependencies": [
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "HeroSlider 슬라이더 구현",
+            "description": "3장 자동 순환 슬라이더를 구현한다.",
+            "dependencies": [],
+            "details": "Swiper/Embla 기반 3슬라이드(2차전지/X-ray/3D 반도체), 자동재생(5초)+일시정지, 화살표/인디케이터, 모바일 스와이프.",
+            "status": "done",
+            "testStrategy": "자동/수동 전환, 일시정지, 스와이프 동작 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.938Z"
+          },
+          {
+            "id": 2,
+            "title": "슬라이드 오버레이 콘텐츠·CTA 및 이미지 최적화",
+            "description": "슬라이드별 텍스트/CTA와 이미지 최적화를 적용한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "슬라이드별 제목/설명/제품 페이지 CTA(2d-vision/xray/3d-vision), next/image priority·반응형·alt, 슬라이더 ARIA.",
+            "status": "done",
+            "testStrategy": "각 CTA 이동 및 LCP 이미지 로딩·접근성 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.944Z"
+          },
+          {
+            "id": 3,
+            "title": "IntroSection 구현",
+            "description": "회사 소개 섹션을 구현한다.",
+            "dependencies": [],
+            "details": "한두 문단 소개 + 핵심 키워드(정밀 검사/머신비전/X-ray), i18n 번역, fade-in 애니메이션.",
+            "status": "done",
+            "testStrategy": "소개 텍스트 렌더 및 번역 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.950Z"
+          },
+          {
+            "id": 4,
+            "title": "ProductCards 구현",
+            "description": "제품 바로가기 카드를 구현한다.",
+            "dependencies": [],
+            "details": "2D/3D/X-ray 3개 카드(썸네일·제목·요약·링크) 그리드 레이아웃, 반응형.",
+            "status": "done",
+            "testStrategy": "카드 링크 이동 및 반응형 그리드 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.957Z"
+          },
+          {
+            "id": 5,
+            "title": "CtaBanner 및 페이지 조립",
+            "description": "문의 CTA와 메인 페이지를 조립한다.",
+            "dependencies": [
+              1,
+              3,
+              4
+            ],
+            "details": "'견적문의 하기'→/contact 배너, app/[locale]/page.tsx 섹션 조립, 메타데이터.",
+            "status": "done",
+            "testStrategy": "메인 페이지 전체 렌더 및 CTA 이동 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.963Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T02:39:46.963Z"
+      },
+      {
+        "id": "5",
+        "title": "회사소개 페이지 구현 (소개/CEO/찾아오시는 길)",
+        "description": "회사 개요, 비전/미션, 연혁, CEO 인사말, 지도 임베드 및 위치 정보 페이지 구현",
+        "details": "1. `app/[locale]/about/page.tsx` (STEADYVIEW 소개):\n   - `components/about/CompanyOverview.tsx`: 회사 개요\n   - `components/about/VisionSection.tsx`: 비전/미션/핵심 역량\n   - `components/about/HistoryTimeline.tsx`: 연혁 타임라인 (수직 타임라인 UI)\n   - `content/company.json`: 연혁 데이터 관리\n2. `app/[locale]/about/ceo/page.tsx` (CEO 인사말):\n   - `components/about/CeoGreeting.tsx`: CEO 사진, 인사말, 서명\n   - 다국어 번역 파일에 인사말 원고 저장\n3. `app/[locale]/about/location/page.tsx` (찾아오시는 길):\n   - `components/about/MapEmbed.tsx`: 지도 임베드 (카카오맵/네이버맵/구글맵 중 선택)\n   - `components/about/ContactInfo.tsx`: 주소, 전화/팩스/이메일, 교통 안내\n   - 주소 복사 버튼 (clipboard API)\n4. 반응형 레이아웃, 애니메이션\n5. SEO: 페이지별 메타데이터 설정",
+        "testStrategy": "- 각 페이지(/about, /about/ceo, /about/location) 접근 확인\n- 연혁 타임라인 스크롤/표시 확인\n- 지도 로딩 및 상호작용 확인 (줌, 드래그)\n- 주소 복사 버튼 클릭 시 클립보드 복사 확인\n- CEO 이미지 최적화 확인\n- 다국어 전환 시 모든 텍스트 번역 확인\n- 모바일 반응형 확인",
+        "priority": "medium",
+        "dependencies": [
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "/about 소개 페이지 (개요/비전)",
+            "description": "회사소개 메인 페이지를 구현한다.",
+            "dependencies": [],
+            "details": "CompanyOverview(회사 개요), VisionSection(비전/미션/핵심 역량) 컴포넌트, 페이지 메타데이터.",
+            "status": "done",
+            "testStrategy": "개요/비전 섹션 렌더 및 번역 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.976Z"
+          },
+          {
+            "id": 2,
+            "title": "HistoryTimeline 및 content/company.json",
+            "description": "연혁 타임라인을 구현한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "수직 타임라인 UI, content/company.json 연혁 데이터 바인딩, 반응형.",
+            "status": "done",
+            "testStrategy": "연혁 항목 정렬·표시 및 반응형 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.983Z"
+          },
+          {
+            "id": 3,
+            "title": "/about/ceo CEO 인사말 페이지",
+            "description": "CEO 인사말 페이지를 구현한다.",
+            "dependencies": [],
+            "details": "CeoGreeting: CEO 사진(next/image), 인사말(i18n), 서명/직함.",
+            "status": "done",
+            "testStrategy": "사진·메시지·서명 렌더 및 반응형 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.989Z"
+          },
+          {
+            "id": 4,
+            "title": "/about/location 지도 임베드",
+            "description": "찾아오시는 길 지도를 구현한다.",
+            "dependencies": [],
+            "details": "MapEmbed(카카오/네이버/구글 중 선택), 지도 API 키 env 처리, 지연 로딩.",
+            "status": "done",
+            "testStrategy": "지도 임베드·좌표 표시 및 상호작용 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:46.995Z"
+          },
+          {
+            "id": 5,
+            "title": "ContactInfo 및 주소 복사",
+            "description": "연락처·교통 안내를 구현한다.",
+            "dependencies": [
+              4
+            ],
+            "details": "주소·전화/팩스/이메일, 대중교통·자가용 안내, clipboard API 주소 복사 버튼.",
+            "status": "done",
+            "testStrategy": "연락처 표시 및 주소 복사 동작 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.001Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T02:39:47.001Z"
+      },
+      {
+        "id": "6",
+        "title": "제품 페이지 구현 (2D/3D/X-ray 비전)",
+        "description": "3개 제품 라인(2D 비전, 3D 비전, X-ray)의 상세 페이지 구현 - 개요, 특징, 사양표, 적용 분야, 갤러리",
+        "details": "1. 공통 제품 페이지 컴포넌트 생성:\n   - `components/products/ProductHero.tsx`: 제품명 + 히어로 이미지\n   - `components/products/ProductFeatures.tsx`: 주요 특징 (아이콘 + 설명)\n   - `components/products/SpecTable.tsx`: 사양표 (테이블 형식)\n   - `components/products/ApplicationList.tsx`: 적용 분야 리스트\n   - `components/products/ProductGallery.tsx`: 이미지 갤러리 (썸네일 + 라이트박스)\n2. 제품별 페이지 생성:\n   - `app/[locale]/products/2d-vision/page.tsx`\n   - `app/[locale]/products/3d-vision/page.tsx`\n   - `app/[locale]/products/xray/page.tsx`\n3. `content/products.json`: 제품별 데이터 관리 (개요, 특징, 사양, 적용 분야)\n4. 각 페이지 하단에 \"견적문의\" CTA 버튼\n5. 반응형 사양표 (모바일에서 스크롤 가능)\n6. 이미지 최적화, lazy loading\n7. SEO: Open Graph 이미지, 구조화 데이터(Product Schema)",
+        "testStrategy": "- 3개 제품 페이지 모두 접근 확인\n- 사양표 데이터 정확히 표시 확인\n- 이미지 갤러리 클릭 시 라이트박스 열림 확인\n- 견적문의 버튼 클릭 시 /contact로 이동\n- 다국어 전환 시 제품 정보 번역 확인\n- 모바일에서 사양표 가로 스크롤 확인\n- 이미지 lazy loading 동작 확인\n- Open Graph 메타 태그 확인 (소셜 공유 시)",
+        "priority": "high",
+        "dependencies": [
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "제품 공통 컴포넌트 세트",
+            "description": "재사용 제품 컴포넌트를 구현한다.",
+            "dependencies": [],
+            "details": "ProductHero, ProductFeatures, SpecTable, ApplicationList, ProductGallery(라이트박스)를 데이터 주도형으로 구현. 반응형 사양표.",
+            "status": "done",
+            "testStrategy": "샘플 데이터로 각 컴포넌트 렌더 및 라이트박스 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.014Z"
+          },
+          {
+            "id": 2,
+            "title": "content/products.json 데이터 스키마",
+            "description": "제품 데이터 구조를 정의한다.",
+            "dependencies": [],
+            "details": "제품별 개요·특징·사양·적용분야·이미지 스키마(TS 타입/zod), 다국어 필드, 로딩 유틸.",
+            "status": "done",
+            "testStrategy": "타입 검증 및 제품 데이터 로딩 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.021Z"
+          },
+          {
+            "id": 3,
+            "title": "/products/2d-vision 페이지",
+            "description": "2D 비전 페이지를 구현한다.",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "2D 머신비전 개요·특징·사양·적용분야(2차전지·전자부품), 공통 템플릿 사용, 견적문의 CTA.",
+            "status": "done",
+            "testStrategy": "2D 페이지 데이터 바인딩 및 렌더 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.027Z"
+          },
+          {
+            "id": 4,
+            "title": "/products/3d-vision 페이지",
+            "description": "3D 비전 페이지를 구현한다.",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "3D 머신비전 개요·특징·사양·적용분야(3D 반도체), 공통 템플릿 사용, 견적문의 CTA.",
+            "status": "done",
+            "testStrategy": "3D 페이지 데이터 바인딩 및 렌더 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.035Z"
+          },
+          {
+            "id": 5,
+            "title": "/products/xray 페이지 및 SEO",
+            "description": "X-ray 페이지와 제품 SEO를 마무리한다.",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "산업용 X-ray 개요·특징·사양·적용분야(2차전지·반도체 내부), 갤러리, CTA, Open Graph·Product Schema 구조화 데이터.",
+            "status": "done",
+            "testStrategy": "X-ray 페이지 렌더, 갤러리, CTA, OG/구조화 데이터 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.042Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T02:39:47.042Z"
+      },
+      {
+        "id": "7",
+        "title": "IR 페이지 구현 (IR DATA 자료 목록 및 다운로드)",
+        "description": "투자자 관계 자료 목록 페이지 구현 - PDF 다운로드 링크, 자료 분류 및 정렬 기능",
+        "details": "1. `app/[locale]/ir/page.tsx` 생성\n2. `components/ir/IrList.tsx`: IR 자료 목록 컴포넌트\n   - 테이블 또는 카드 형식\n   - 컬럼: 제목, 구분(공시/재무), 게시일, 다운로드\n3. `components/ir/IrDownloadItem.tsx`: 개별 자료 항목\n   - PDF 다운로드 링크 (public/ir/ 폴더)\n   - 파일 크기 표시\n4. `content/ir-data.json`: IR 자료 메타데이터 관리\n   ```json\n   [\n     {\n       \"id\": 1,\n       \"title\": {\"ko\": \"2025년 1분기 실적 발표\", \"en\": \"Q1 2025 Earnings\", \"zh\": \"2025年第一季度业绩\"},\n       \"category\": \"financial\",\n       \"date\": \"2025-04-15\",\n       \"filename\": \"2025-q1-earnings.pdf\"\n     }\n   ]\n   ```\n5. (선택) 카테고리 필터 버튼 (전체/공시/재무)\n6. 정렬 기능 (최신순/오래된순)\n7. 다운로드 버튼 클릭 시 PDF 다운로드\n8. 반응형 테이블 (모바일: 카드 형식)",
+        "testStrategy": "- IR 자료 목록 렌더링 확인\n- PDF 다운로드 링크 클릭 시 파일 다운로드 확인\n- 카테고리 필터 동작 확인 (전체/공시/재무)\n- 정렬 기능 확인\n- 다국어 전환 시 제목 번역 확인\n- 자료가 없을 때 빈 상태 메시지 표시\n- 모바일 반응형 확인",
+        "priority": "medium",
+        "dependencies": [
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "content/ir-data.json 스키마 및 데이터",
+            "description": "IR 자료 데이터 구조를 정의한다.",
+            "dependencies": [],
+            "details": "id/제목(다국어)/구분(category)/게시일/파일명 스키마(TS 타입), public/ir PDF 배치 규칙, 샘플 데이터.",
+            "status": "done",
+            "testStrategy": "데이터 로딩 및 타입 검증 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.056Z"
+          },
+          {
+            "id": 2,
+            "title": "IrList / IrDownloadItem 컴포넌트",
+            "description": "목록과 항목 UI를 구현한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "테이블/카드 형식(제목·구분·게시일·다운로드), PDF 다운로드 링크(download 속성), 파일 크기 표시, 반응형.",
+            "status": "done",
+            "testStrategy": "목록 렌더 및 다운로드 링크 동작 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.062Z"
+          },
+          {
+            "id": 3,
+            "title": "카테고리 필터 및 정렬",
+            "description": "필터/정렬 기능을 구현한다.",
+            "dependencies": [
+              2
+            ],
+            "details": "구분(전체/공시/재무) 필터, 최신순/오래된순 정렬, 필터/정렬 상태 관리.",
+            "status": "done",
+            "testStrategy": "필터·정렬 시 목록이 올바르게 갱신되는지 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.069Z"
+          },
+          {
+            "id": 4,
+            "title": "/ir 페이지 조립 및 빈 상태",
+            "description": "IR 페이지를 완성한다.",
+            "dependencies": [
+              2
+            ],
+            "details": "app/[locale]/ir/page.tsx 조립, 페이지 히어로·메타데이터, 자료 없을 때 빈 상태 메시지, 접근성.",
+            "status": "done",
+            "testStrategy": "페이지 렌더 및 빈 상태 메시지 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.075Z"
+          },
+          {
+            "id": 5,
+            "title": "IR 자료 갱신 워크플로 문서화",
+            "description": "자료 추가 절차를 문서화한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "PDF를 public/ir에 추가하고 ir-data.json에 항목 추가 후 Git push→Vercel 재배포 절차 문서화.",
+            "status": "done",
+            "testStrategy": "문서대로 신규 자료 추가 시 목록/다운로드 반영 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.081Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T02:39:47.081Z"
+      },
+      {
+        "id": "8",
+        "title": "견적문의 폼 및 이메일 전송 API 구현",
+        "description": "회사명, 담당자, 연락처, 이메일, 관심 제품, 문의 내용 입력 폼 및 이메일 전송 기능 구현",
+        "details": "1. `app/[locale]/contact/page.tsx` 생성\n2. `components/contact/ContactForm.tsx` 구현:\n   - react-hook-form + zod 사용\n   - 입력 필드:\n     - 회사명 (text, required)\n     - 담당자명 (text, required)\n     - 연락처 (tel, required, 형식 검증)\n     - 이메일 (email, required, 형식 검증)\n     - 관심 제품 (select, required: 2D 비전/3D 비전/X-ray/기타)\n     - 문의 내용 (textarea, required, 10자 이상)\n     - 개인정보 수집·이용 동의 (checkbox, required)\n   - 클라이언트 유효성 검사 (실시간 에러 메시지)\n   - 제출 버튼 (로딩 상태 표시)\n3. `app/api/contact/route.ts` (Route Handler):\n   - POST 요청 처리\n   - zod로 서버 측 유효성 검사\n   - Resend API를 사용하여 회사 대표 이메일로 전송\n   - 이메일 템플릿 (HTML 형식)\n   - 스팸 방지: Honeypot 필드 추가 (선택: reCAPTCHA)\n   - 에러 핸들링, 200/400/500 응답\n4. 제출 성공 시: 성공 메시지 모달, 폼 초기화\n5. 제출 실패 시: 에러 메시지 표시\n6. 중복 제출 방지 (버튼 비활성화)\n7. 다국어 에러 메시지, 라벨 번역",
+        "testStrategy": "- 모든 필드 유효성 검사 확인 (빈 값, 형식 오류)\n- 이메일 형식 검증 (example@domain.com)\n- 전화번호 형식 검증\n- 개인정보 동의 체크 필수 확인\n- 폼 제출 시 로딩 상태 표시 확인\n- 이메일 전송 성공 확인 (수신 이메일 확인)\n- 제출 성공 후 성공 메시지 표시\n- 서버 에러 시 에러 메시지 표시\n- 중복 제출 방지 확인\n- 다국어 전환 시 모든 라벨/에러 메시지 번역 확인",
+        "priority": "high",
+        "dependencies": [
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "zod 스키마 및 폼 필드 정의",
+            "description": "폼 검증 스키마를 정의한다.",
+            "dependencies": [],
+            "details": "zod 스키마(회사명/담당자명/연락처(tel)/이메일/관심제품(2D/3D/X-ray/기타)/문의내용(10자+)/개인정보 동의), FormField 공통 컴포넌트.",
+            "status": "done",
+            "testStrategy": "각 필드 유효성 규칙 단위 검증.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.095Z"
+          },
+          {
+            "id": 2,
+            "title": "ContactForm 및 클라이언트 검증",
+            "description": "폼 UI와 실시간 검증을 구현한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "react-hook-form + zodResolver, 개인정보 동의 체크박스, 실시간 에러 메시지(i18n), 제출 버튼 로딩 상태.",
+            "status": "done",
+            "testStrategy": "클라이언트 유효성 및 에러 메시지 표시 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.102Z"
+          },
+          {
+            "id": 3,
+            "title": "app/api/contact 라우트 핸들러 + Resend",
+            "description": "서버에서 이메일을 전송한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "POST 핸들러, zod 서버 재검증, 입력 새니타이즈, Resend로 대표 이메일 전송(HTML 템플릿, 수신 주소·키 env), 200/400/500 응답.",
+            "status": "done",
+            "testStrategy": "정상 페이로드 이메일 수신, 잘못된 페이로드 400 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.108Z"
+          },
+          {
+            "id": 4,
+            "title": "스팸 방지 및 중복 제출 방지",
+            "description": "스팸/중복 제출을 방지한다.",
+            "dependencies": [
+              3
+            ],
+            "details": "허니팟 필드(선택 reCAPTCHA), 제출 중 버튼 비활성화·디바운스로 중복 방지.",
+            "status": "done",
+            "testStrategy": "허니팟 요청 차단 및 연속 제출 방지 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.115Z"
+          },
+          {
+            "id": 5,
+            "title": "결과 피드백 및 페이지 조립",
+            "description": "성공/실패 UX와 페이지를 완성한다.",
+            "dependencies": [
+              2,
+              3
+            ],
+            "details": "성공 메시지 모달·폼 초기화, 실패 에러 메시지, app/[locale]/contact/page.tsx 조립, 라벨/메시지 다국어 번역.",
+            "status": "done",
+            "testStrategy": "성공/실패 시나리오별 피드백 및 폼 상태 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.121Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T02:39:47.121Z"
+      },
+      {
+        "id": "9",
+        "title": "SEO 최적화 및 메타데이터 설정",
+        "description": "페이지별 메타 태그, Open Graph, sitemap.xml, robots.txt, 구조화 데이터 구현",
+        "details": "1. 각 페이지별 `metadata` export 추가:\n   - title, description, keywords\n   - Open Graph: og:title, og:description, og:image, og:type\n   - Twitter Card: twitter:card, twitter:title, twitter:description, twitter:image\n   - 언어별 다른 메타데이터 (useTranslations)\n2. `app/sitemap.ts` 생성:\n   - 동적 sitemap.xml 생성\n   - 모든 정적 페이지 + 언어별 URL 포함\n   - lastmod, changefreq, priority 설정\n3. `app/robots.ts` 생성:\n   - User-agent: *\n   - Allow: /\n   - Sitemap: https://도메인/sitemap.xml\n4. 구조화 데이터 추가 (JSON-LD):\n   - Organization Schema (회사 정보)\n   - Product Schema (제품 페이지)\n   - BreadcrumbList Schema (브레드크럼)\n5. `app/[locale]/layout.tsx`에 hreflang 태그 추가:\n   - <link rel=\"alternate\" hreflang=\"ko\" href=\"...\" />\n   - <link rel=\"alternate\" hreflang=\"en\" href=\"...\" />\n   - <link rel=\"alternate\" hreflang=\"zh\" href=\"...\" />\n   - <link rel=\"alternate\" hreflang=\"x-default\" href=\"...\" />\n6. 폰트 최적화: next/font 사용 (Pretendard 또는 Inter)\n7. 이미지 alt 텍스트 모든 이미지에 추가",
+        "testStrategy": "- 각 페이지 <head> 확인 (View Page Source)\n- Open Graph 미리보기 확인 (Facebook Debugger, LinkedIn Inspector)\n- /sitemap.xml 접근 확인 (모든 페이지 포함)\n- /robots.txt 접근 확인\n- Google Rich Results Test로 구조화 데이터 검증\n- hreflang 태그 확인 (SEO 도구)\n- 이미지 alt 누락 확인 (접근성 검사 도구)\n- Lighthouse SEO 점수 90+ 목표",
+        "priority": "medium",
+        "dependencies": [
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "페이지별 메타데이터 및 Open Graph",
+            "description": "SEO 메타를 구성한다.",
+            "dependencies": [],
+            "details": "generateMetadata로 페이지별 title/description/keywords/OG/Twitter Card, 언어별 메타데이터.",
+            "status": "done",
+            "testStrategy": "각 페이지 메타/OG 태그 출력 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.133Z"
+          },
+          {
+            "id": 2,
+            "title": "sitemap.ts 생성",
+            "description": "동적 사이트맵을 만든다.",
+            "dependencies": [
+              1
+            ],
+            "details": "app/sitemap.ts로 모든 정적 페이지+언어별 URL, lastmod/changefreq/priority 설정.",
+            "status": "done",
+            "testStrategy": "/sitemap.xml 접근 및 모든 페이지 포함 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.139Z"
+          },
+          {
+            "id": 3,
+            "title": "robots.ts 생성",
+            "description": "robots 규칙을 설정한다.",
+            "dependencies": [
+              2
+            ],
+            "details": "app/robots.ts로 User-agent/Allow/Sitemap 지정.",
+            "status": "done",
+            "testStrategy": "/robots.txt 접근 및 sitemap 링크 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.145Z"
+          },
+          {
+            "id": 4,
+            "title": "구조화 데이터(JSON-LD)",
+            "description": "구조화 데이터를 추가한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "Organization/Product/BreadcrumbList JSON-LD 스키마 삽입.",
+            "status": "done",
+            "testStrategy": "Rich Results Test로 구조화 데이터 검증.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.150Z"
+          },
+          {
+            "id": 5,
+            "title": "hreflang, 폰트, 이미지 alt",
+            "description": "다국어 SEO와 폰트/alt를 마무리한다.",
+            "dependencies": [
+              1
+            ],
+            "details": "layout에 hreflang(ko/en/zh/x-default) 태그, next/font 폰트 최적화, 모든 이미지 alt 추가.",
+            "status": "done",
+            "testStrategy": "hreflang 태그·폰트 로딩·alt 누락 검사 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.157Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T02:39:47.157Z"
+      },
+      {
+        "id": "10",
+        "title": "성능 최적화, 접근성 개선 및 배포 준비",
+        "description": "이미지 최적화, 코드 스플리팅, 접근성 검증, Vercel 배포 설정 및 최종 QA",
+        "details": "1. 성능 최적화:\n   - 모든 이미지 next/image 적용 확인\n   - 슬라이더 이미지 priority 설정\n   - 나머지 이미지 lazy loading\n   - 폰트 최적화 (next/font, preload)\n   - 코드 스플리팅: dynamic import로 무거운 컴포넌트 로딩 (지도, 갤러리)\n   - `next/bundle-analyzer` 설치하여 번들 크기 분석\n2. 접근성(a11y) 개선:\n   - ARIA labels 추가 (네비게이션, 버튼, 폼)\n   - 키보드 네비게이션 테스트 (Tab, Enter, Esc)\n   - 명도 대비 검증 (WCAG AA 기준)\n   - 스크린 리더 테스트 (NVDA/VoiceOver)\n   - 슬라이더에 aria-live, aria-label 추가\n3. Vercel 배포:\n   - GitHub 저장소 연결\n   - 환경변수 설정 (RESEND_API_KEY, 수신 이메일, 지도 API 키)\n   - 프로덕션 빌드 테스트 (`npm run build`)\n   - Vercel에 배포 후 프리뷰 확인\n4. 최종 QA:\n   - 모든 페이지 수동 테스트 (데스크톱/모바일)\n   - 다국어 전환 테스트\n   - 폼 제출 테스트 (실제 이메일 수신)\n   - Lighthouse 검사 (Performance 90+, Accessibility 90+, Best Practices 90+, SEO 90+)\n   - 브라우저 호환성 테스트 (Chrome, Safari, Firefox, Edge)\n5. 커스텀 도메인 연결 (고객 도메인 확정 후)",
+        "testStrategy": "- Lighthouse 모든 페이지에서 90+ 점수 확인\n- LCP < 2.5s, FID < 100ms, CLS < 0.1\n- bundle-analyzer로 페이지별 번들 크기 확인 (First Load JS < 200KB 목표)\n- 키보드만으로 전체 사이트 네비게이션 가능 확인\n- 스크린 리더로 주요 페이지 테스트\n- 모바일 실기기 테스트 (iOS Safari, Android Chrome)\n- Vercel 프로덕션 배포 후 실제 도메인에서 전체 기능 테스트\n- 이메일 전송 실제 확인\n- 다국어 모든 페이지 번역 확인",
+        "priority": "high",
+        "dependencies": [
+          "9"
+        ],
+        "status": "in-progress",
+        "subtasks": [
+          {
+            "id": 2,
+            "title": "번들 크기 분석",
+            "description": "번들을 분석하고 줄인다.",
+            "dependencies": [],
+            "details": "next/bundle-analyzer 설치·분석, 페이지별 First Load JS<200KB 목표로 최적화.",
+            "status": "done",
+            "testStrategy": "bundle-analyzer로 페이지별 번들 크기 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.167Z"
+          },
+          {
+            "id": 3,
+            "title": "접근성 개선 및 검증",
+            "description": "a11y를 점검·개선한다.",
+            "dependencies": [],
+            "details": "네비/버튼/폼 ARIA, 키보드 네비(Tab/Enter/Esc), 명도 대비(WCAG AA), 슬라이더 aria-live/aria-label, 스크린리더 테스트.",
+            "status": "done",
+            "testStrategy": "Lighthouse 접근성 및 키보드/스크린리더 수동 점검.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:39:47.173Z"
+          },
+          {
+            "id": 4,
+            "title": "Vercel 배포 설정",
+            "description": "프로덕션 배포를 구성한다.",
+            "dependencies": [],
+            "details": "GitHub 연결, 환경변수(RESEND_API_KEY·수신 이메일·지도 키) 설정, npm run build 검증, main→Production 배포.",
+            "status": "pending",
+            "testStrategy": "프로덕션 빌드 성공 및 배포 URL 렌더 확인.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-20T02:40:20.806Z"
+          }
+        ],
+        "updatedAt": "2026-07-20T02:40:20.806Z"
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "lastModified": "2026-07-20T02:40:20.807Z",
+      "taskCount": 10,
+      "completedCount": 9,
+      "tags": [
+        "master"
+      ]
+    }
+  }
+}

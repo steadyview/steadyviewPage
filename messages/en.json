@@ -1,0 +1,201 @@
+{
+  "Metadata": {
+    "title": "STEADYVIEW — Precision Inspection Solutions",
+    "description": "STEADYVIEW is a B2B company developing 2D/3D machine vision and industrial X-ray inspection equipment."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "aboutOverview": "About STEADYVIEW",
+    "ceo": "CEO Message",
+    "location": "Location",
+    "products": "Products",
+    "product2d": "2D Vision",
+    "product3d": "3D Vision",
+    "productXray": "X-ray",
+    "ir": "IR",
+    "contact": "Get a Quote"
+  },
+  "LanguageSwitcher": {
+    "label": "Select language",
+    "ko": "한국어",
+    "en": "English",
+    "zh": "中文"
+  },
+  "HomePage": {
+    "eyebrow": "Precision Inspection Solutions",
+    "tagline": "Unwavering Vision, Clear Direction",
+    "intro": "STEADYVIEW engineers 2D/3D machine vision and industrial X-ray inspection equipment that protects quality on battery and semiconductor production lines, catching micro defects that are easy to miss.",
+    "keywordPrecision": "Precision Inspection",
+    "keywordVision": "Machine Vision",
+    "keywordXray": "Industrial X-ray",
+    "cta": "Get a Quote",
+    "productsTitle": "Explore Products",
+    "productsSub": "Find the right solution for your inspection needs.",
+    "ctaBannerTitle": "Considering new inspection equipment?",
+    "ctaBannerBody": "Review specifications and use cases, then request a tailored quote.",
+    "ctaBannerButton": "Get a Quote →"
+  },
+  "HomeHero": {
+    "slide1Kicker": "Battery Inspection",
+    "slide1Title": "2D Machine Vision Catches Micro Defects",
+    "slide1Desc": "High-speed, high-precision inspection of secondary battery cap and electrode surfaces.",
+    "slide1Cta": "Explore 2D Vision",
+    "slide2Kicker": "Industrial X-ray Inspection",
+    "slide2Title": "See Inside, Non-Destructively",
+    "slide2Desc": "X-ray CT inspects internal defects and foreign material in batteries without damage.",
+    "slide2Cta": "Explore X-ray",
+    "slide3Kicker": "3D Semiconductor Inspection",
+    "slide3Title": "A New Standard in 3D Measurement",
+    "slide3Desc": "High-precision 3D shape measurement detects bump and surface defects on semiconductors.",
+    "slide3Cta": "Explore 3D Vision",
+    "prev": "Previous slide",
+    "next": "Next slide",
+    "pause": "Pause slideshow",
+    "play": "Play slideshow",
+    "goTo": "Go to slide {index}"
+  },
+  "AboutPage": {
+    "kicker": "About",
+    "heroIntro": "STEADYVIEW builds trust in precision inspection through 2D/3D machine vision and industrial X-ray equipment.",
+    "promiseSteadyTitle": "Steady (Unwavering Precision)",
+    "promiseSteadyBody": "With flawless 3D analysis that tolerates no margin of error and X-ray technology that sees into the deepest corners, we guarantee the highest inspection accuracy — steady even in the harshest manufacturing environments.",
+    "promiseViewTitle": "View (A Forward-Looking Vision)",
+    "promiseViewBody": "Beyond simple defect detection, we will be a leading technology partner that maximizes our customers' productivity and looks ahead to the future of the smart factory.",
+    "overviewTitle": "Company Overview",
+    "historyTitle": "History"
+  },
+  "CeoPage": {
+    "kicker": "About",
+    "title": "CEO Message",
+    "greetingHello": "Hello,",
+    "intro": "I am the CEO of STEADYVIEW Co., Ltd.",
+    "body1": "Today's global manufacturing industry demands stricter quality control than ever, as nanoscale processes converge with advanced technology. In an era when a single microscopic defect can determine the safety of an entire system, flawless inspection is no longer optional — it is a survival strategy for every enterprise.",
+    "body2": "STEADYVIEW meets this demand as an industrial inspection equipment company providing ultra-precision machine vision, 3D, and X-ray inspection solutions that see beyond the limits of the human eye.",
+    "promiseLead": "Our company name, \"STEADYVIEW,\" carries two firm commitments.",
+    "promiseSteadyTitle": "Steady (Unwavering Precision)",
+    "promiseSteadyBody": "With flawless 3D analysis that tolerates no margin of error and X-ray technology that sees into the deepest corners, we guarantee the highest inspection accuracy — steady even in the harshest manufacturing environments.",
+    "promiseViewTitle": "View (A Forward-Looking Vision)",
+    "promiseViewBody": "Beyond simple defect detection, we will be a leading technology partner that maximizes our customers' productivity and looks ahead to the future of the smart factory.",
+    "body3": "We place technical substance over superficial appeal, and unwavering trust with our customers above all else. Through continuous R&D investment and proprietary ultra-precision image processing technology, we will raise the quality standards of Korea's and the world's advanced industries — including semiconductors, batteries, and automotive components — to a new level.",
+    "body4": "With an ever-steady view toward our customers' success, we promise to stand together as the most trusted, top-tier global partner in inspection equipment.",
+    "closing": "We ask for your continued warm interest and support for STEADYVIEW's unwavering challenge ahead.",
+    "thanks": "Thank you.",
+    "signatureCompany": "STEADYVIEW Co., Ltd.",
+    "signatureName": "CEO Haechan Kim",
+    "photoPlaceholder": "CEO photo (coming soon)"
+  },
+  "LocationPage": {
+    "kicker": "About",
+    "title": "Location",
+    "subtitle": "Please contact us in advance if you plan to visit — we're happy to help with directions.",
+    "addressTitle": "Address",
+    "copyAddress": "Copy address",
+    "copied": "Copied",
+    "transportTitle": "Getting Here",
+    "byCarTitle": "By Car",
+    "byCarBody": "Search our company name or address in your navigation app. Visitor parking is available on-site.",
+    "byTransitTitle": "By Public Transit",
+    "byTransitBody": "The nearest subway station and bus stops are within walking distance or a short shuttle ride. Please contact us for detailed directions before visiting.",
+    "mapNote": "The map below is for general guidance — please confirm the exact location before visiting.",
+    "mapUnavailable": "The map couldn't be loaded. Please try again shortly."
+  },
+  "ContactPage": {
+    "kicker": "Get a Quote",
+    "title": "Get a Quote",
+    "subtitle": "Leave your inquiry about our products or adoption process and we'll respond promptly.",
+    "directEmailNote": "For more detailed inquiries, feel free to email us directly at sales@steadyview.co.kr.",
+    "companyLabel": "Company",
+    "contactNameLabel": "Contact Name",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+1 555-000-0000",
+    "emailLabel": "Email",
+    "emailPlaceholder": "name@company.com",
+    "interestLabel": "Product Interest",
+    "interestPlaceholder": "Please select",
+    "interest2d": "2D Vision",
+    "interest3d": "3D Vision",
+    "interestXray": "X-ray",
+    "interestOther": "Other",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Please enter at least 10 characters describing your inquiry.",
+    "consentLabel": "I agree to the collection and use of my personal information.",
+    "consentDetail": "Items collected: company, contact name, phone, email, message / Purpose: responding to inquiries / Retention: destroyed immediately after the inquiry is resolved",
+    "submit": "Send Inquiry",
+    "submitting": "Sending...",
+    "errorRequired": "This field is required.",
+    "errorPhoneInvalid": "Please enter a valid phone number.",
+    "errorEmailInvalid": "Please enter a valid email address.",
+    "errorMessageMin": "Please enter at least 10 characters.",
+    "errorConsentRequired": "Please agree to the collection and use of personal information.",
+    "successTitle": "Your inquiry has been submitted",
+    "successBody": "Our team will get back to you as soon as possible.",
+    "successClose": "Close",
+    "failureTitle": "Submission failed",
+    "failureBody": "Please try again shortly, or contact us directly by email.",
+    "failureRetry": "Try again"
+  },
+  "IrPage": {
+    "kicker": "IR",
+    "title": "IR Data",
+    "subtitle": "Financial and disclosure materials for investors and stakeholders.",
+    "filterAll": "All",
+    "filterFinancial": "Financial",
+    "filterDisclosure": "Disclosure",
+    "sortNewest": "Newest first",
+    "sortOldest": "Oldest first",
+    "colTitle": "Title",
+    "colCategory": "Category",
+    "colDate": "Date",
+    "colDownload": "Download",
+    "download": "Download"
+  },
+  "ProductPage": {
+    "overviewLabel": "Overview",
+    "featuresTitle": "Key Features",
+    "applicationsTitle": "Applications",
+    "galleryTitle": "Image Gallery",
+    "ctaTitle": "Want to learn more about this product?",
+    "ctaBody": "Get detailed specifications and use-case guidance from our team.",
+    "ctaButton": "Get a Quote",
+    "closeGallery": "Close gallery",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "imageOf": "{current} of {total}"
+  },
+  "ProductsSummary": {
+    "product2d": {
+      "title": "2D Vision",
+      "summary": "High-speed surface inspection detects micro defects on batteries and electronic parts."
+    },
+    "product3d": {
+      "title": "3D Vision",
+      "summary": "High-precision 3D shape measurement detects bump and surface defects on semiconductors."
+    },
+    "productXray": {
+      "title": "X-ray",
+      "summary": "Non-destructive X-ray inspection identifies internal defects and foreign material."
+    }
+  },
+  "Footer": {
+    "companyName": "STEADYVIEW Co., Ltd.",
+    "addressLabel": "Address",
+    "address": "Room B121, Gwangyang Frontier Valley 8-cha Knowledge Industry Center, 18 Gwangseokcheon-gil, Siheung-si, Gyeonggi-do, Korea",
+    "phoneLabel": "Tel",
+    "phone": "+82-10-9240-9168",
+    "emailLabel": "Email",
+    "email": "sales@steadyview.co.kr",
+    "rights": "© 2026 STEADYVIEW. All rights reserved.",
+    "privacy": "Privacy Policy"
+  },
+  "MobileMenu": {
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "Common": {
+    "loading": "Loading…",
+    "error": "Something went wrong.",
+    "retry": "Retry",
+    "skipToContent": "Skip to content"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "Metadata": {
+    "title": "STEADYVIEW — 精密检测解决方案",
+    "description": "STEADYVIEW 是一家研发并供应 2D/3D 机器视觉及工业 X 射线检测设备的 B2B 企业。"
+  },
+  "Nav": {
+    "home": "首页",
+    "about": "公司介绍",
+    "aboutOverview": "关于 STEADYVIEW",
+    "ceo": "总裁致辞",
+    "location": "联系我们",
+    "products": "产品",
+    "product2d": "2D 视觉",
+    "product3d": "3D 视觉",
+    "productXray": "X 射线",
+    "ir": "投资者关系",
+    "contact": "获取报价"
+  },
+  "LanguageSwitcher": {
+    "label": "选择语言",
+    "ko": "한국어",
+    "en": "English",
+    "zh": "中文"
+  },
+  "HomePage": {
+    "eyebrow": "精密检测解决方案",
+    "tagline": "稳定视野，清晰方向",
+    "intro": "STEADYVIEW 精心研发 2D/3D 机器视觉及工业 X 射线检测设备，守护二次电池与半导体制造现场的品质，精准捕捉容易遗漏的微小缺陷。",
+    "keywordPrecision": "精密检测",
+    "keywordVision": "机器视觉",
+    "keywordXray": "工业 X 射线",
+    "cta": "获取报价",
+    "productsTitle": "产品导览",
+    "productsSub": "查找符合您检测需求的解决方案。",
+    "ctaBannerTitle": "正在考虑引进检测设备吗？",
+    "ctaBannerBody": "查看产品规格与应用案例，获取专属报价。",
+    "ctaBannerButton": "获取报价 →"
+  },
+  "HomeHero": {
+    "slide1Kicker": "二次电池检测",
+    "slide1Title": "2D 机器视觉捕捉微小缺陷",
+    "slide1Desc": "高速高精度检测二次电池端盖与电极表面缺陷。",
+    "slide1Cta": "了解 2D 视觉",
+    "slide2Kicker": "工业 X 射线检测",
+    "slide2Title": "非破坏性透视内部结构",
+    "slide2Desc": "X 射线 CT 以非破坏方式检测电池内部缺陷与异物。",
+    "slide2Cta": "了解 X 射线",
+    "slide3Kicker": "3D 半导体检测",
+    "slide3Title": "3D 形貌测量新标准",
+    "slide3Desc": "高精度 3D 形貌测量检测半导体凸点与外观缺陷。",
+    "slide3Cta": "了解 3D 视觉",
+    "prev": "上一张",
+    "next": "下一张",
+    "pause": "暂停播放",
+    "play": "开始播放",
+    "goTo": "转到第 {index} 张幻灯片"
+  },
+  "AboutPage": {
+    "kicker": "公司介绍",
+    "heroIntro": "STEADYVIEW 通过 2D/3D 机器视觉与工业 X 射线检测设备，缔造精密检测的信赖。",
+    "promiseSteadyTitle": "Steady（稳定精准）",
+    "promiseSteadyBody": "凭借不容许任何微小误差的完美 3D 立体分析，以及可透视至最深处的 X 射线技术，即使在最严苛的制造环境中，也能保证始终如一的最高检测精度。",
+    "promiseViewTitle": "View（洞察未来的视野）",
+    "promiseViewBody": "不止于简单的缺陷检测，我们将成为最大化客户生产力、率先展望智能工厂未来的引领性技术合作伙伴。",
+    "overviewTitle": "公司概况",
+    "historyTitle": "发展历程"
+  },
+  "CeoPage": {
+    "kicker": "公司介绍",
+    "title": "总裁致辞",
+    "greetingHello": "您好，",
+    "intro": "我是STEADYVIEW株式会社的代表理事（CEO）。",
+    "body1": "如今，全球制造业正随着纳米级精密工艺与高端技术的融合，面临比以往任何时候都更严格的品质管理要求。在微小缺陷足以左右整个系统安全的时代，完美的检测已不再是选择，而是企业生存的战略。",
+    "body2": "我们STEADYVIEW正是为顺应这一时代需求而生的工业检测设备专业企业，提供超越人眼极限的超精密机器视觉、3D 及 X 射线检测解决方案。",
+    "promiseLead": "我们公司名称「STEADYVIEW」中蕴含着两项坚定的承诺。",
+    "promiseSteadyTitle": "Steady（稳定精准）",
+    "promiseSteadyBody": "凭借不容许任何微小误差的完美 3D 立体分析，以及可透视至最深处的 X 射线技术，即使在最严苛的制造环境中，也能保证始终如一的最高检测精度。",
+    "promiseViewTitle": "View（洞察未来的视野）",
+    "promiseViewBody": "不止于简单的缺陷检测，我们将成为最大化客户生产力、率先展望智能工厂未来的引领性技术合作伙伴。",
+    "body3": "我们始终将扎实的技术实力置于华丽的外表之上，将与客户之间始终如一的信赖视为首要价值。凭借持续的研发投入与自主研发的超精密图像处理技术，我们将助力半导体、电池、汽车零部件等韩国及全球高端产业的品质标准迈上新台阶。",
+    "body4": "我们将始终以如一的目光注视客户的成功，承诺携手成为最值得信赖的全球顶级（Top-tier）检测设备合作伙伴。",
+    "closing": "衷心希望您一如既往地关注并支持 STEADYVIEW 坚定不移的挑战之路。",
+    "thanks": "谢谢。",
+    "signatureCompany": "STEADYVIEW株式会社",
+    "signatureName": "代表理事 金海灿",
+    "photoPlaceholder": "总裁照片（筹备中）"
+  },
+  "LocationPage": {
+    "kicker": "公司介绍",
+    "title": "联系我们",
+    "subtitle": "如计划来访，请提前与我们联系，我们将为您提供路线指引。",
+    "addressTitle": "地址",
+    "copyAddress": "复制地址",
+    "copied": "已复制",
+    "transportTitle": "交通指南",
+    "byCarTitle": "自驾",
+    "byCarBody": "请在导航中搜索公司名称或地址。现场设有访客停车位。",
+    "byTransitTitle": "公共交通",
+    "byTransitBody": "最近的地铁站与公交站步行或搭乘接驳车即可到达。详细路线请在来访前与我们联系。",
+    "mapNote": "以下地图仅供参考，请在来访前确认准确位置。",
+    "mapUnavailable": "地图暂时无法加载，请稍后再试。"
+  },
+  "ContactPage": {
+    "kicker": "获取报价",
+    "title": "获取报价",
+    "subtitle": "请留下您有关产品或引进流程的问题，我们将尽快回复。",
+    "directEmailNote": "如需更详细的咨询，也可直接发邮件至 sales@steadyview.co.kr。",
+    "companyLabel": "公司名称",
+    "contactNameLabel": "联系人姓名",
+    "phoneLabel": "联系电话",
+    "phonePlaceholder": "010-0000-0000",
+    "emailLabel": "邮箱",
+    "emailPlaceholder": "name@company.com",
+    "interestLabel": "感兴趣的产品",
+    "interestPlaceholder": "请选择",
+    "interest2d": "2D 视觉",
+    "interest3d": "3D 视觉",
+    "interestXray": "X 射线",
+    "interestOther": "其他",
+    "messageLabel": "咨询内容",
+    "messagePlaceholder": "请输入至少 10 个字符的咨询内容。",
+    "consentLabel": "我同意收集和使用个人信息。",
+    "consentDetail": "收集项目：公司名称、联系人姓名、联系电话、邮箱、咨询内容 / 目的：回复咨询 / 保存期限：处理完成后立即销毁",
+    "submit": "发送咨询",
+    "submitting": "发送中...",
+    "errorRequired": "该项为必填项。",
+    "errorPhoneInvalid": "请输入正确格式的联系电话。",
+    "errorEmailInvalid": "请输入正确格式的邮箱地址。",
+    "errorMessageMin": "请输入至少 10 个字符。",
+    "errorConsentRequired": "请同意收集和使用个人信息。",
+    "successTitle": "您的咨询已提交",
+    "successBody": "我们的团队将尽快与您联系。",
+    "successClose": "关闭",
+    "failureTitle": "提交失败",
+    "failureBody": "请稍后重试，或直接通过邮箱与我们联系。",
+    "failureRetry": "重试"
+  },
+  "IrPage": {
+    "kicker": "投资者关系",
+    "title": "IR 资料",
+    "subtitle": "为投资者与利益相关者提供的财务与公告资料。",
+    "filterAll": "全部",
+    "filterFinancial": "财务",
+    "filterDisclosure": "公告",
+    "sortNewest": "最新优先",
+    "sortOldest": "最早优先",
+    "colTitle": "标题",
+    "colCategory": "类别",
+    "colDate": "发布日期",
+    "colDownload": "下载",
+    "download": "下载"
+  },
+  "ProductPage": {
+    "overviewLabel": "产品概述",
+    "featuresTitle": "主要特点",
+    "applicationsTitle": "应用领域",
+    "galleryTitle": "图片展示",
+    "ctaTitle": "想进一步了解该产品吗？",
+    "ctaBody": "获取详细规格与应用案例，专属顾问为您解答。",
+    "ctaButton": "获取报价",
+    "closeGallery": "关闭图片浏览",
+    "prevImage": "上一张图片",
+    "nextImage": "下一张图片",
+    "imageOf": "第 {current} / {total} 张"
+  },
+  "ProductsSummary": {
+    "product2d": {
+      "title": "2D 视觉",
+      "summary": "高速表面检测二次电池与电子零部件的微小缺陷。"
+    },
+    "product3d": {
+      "title": "3D 视觉",
+      "summary": "高精度 3D 形貌测量检测半导体凸点与外观缺陷。"
+    },
+    "productXray": {
+      "title": "X 射线",
+      "summary": "非破坏性 X 射线检测识别产品内部缺陷与异物。"
+    }
+  },
+  "Footer": {
+    "companyName": "STEADYVIEW 有限公司",
+    "addressLabel": "地址",
+    "address": "韩国京畿道始兴市光石川街18号 光阳前沿谷8次知识产业中心 B121号",
+    "phoneLabel": "电话",
+    "phone": "+82-10-9240-9168",
+    "emailLabel": "邮箱",
+    "email": "sales@steadyview.co.kr",
+    "rights": "© 2026 STEADYVIEW. 版权所有。",
+    "privacy": "隐私政策"
+  },
+  "MobileMenu": {
+    "open": "打开菜单",
+    "close": "关闭菜单"
+  },
+  "Common": {
+    "loading": "加载中…",
+    "error": "发生错误。",
+    "retry": "重试",
+    "skipToContent": "跳转到主要内容"
+  }
+}
