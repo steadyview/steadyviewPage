@@ -1,25 +1,27 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Script from "next/script";
 import { useTranslations } from "next-intl";
 import { companyInfo } from "@/content/company";
 
 declare global {
   interface Window {
-    // Kakao Maps SDK는 공식 타입 패키지가 없어 any로 선언한다.
-    kakao: any;
+    // 네이버 지도 SDK는 공식 타입 패키지가 없어 any로 선언한다.
+    naver: any;
   }
 }
 
-const KAKAO_KEY = process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY;
+const NAVER_CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID;
 
 type Status = "loading" | "ready" | "error";
 
 /**
- * 카카오맵 임베드 — 도로명주소 지오코딩으로 정확한 위치를 찾아 표시.
- * (장소명 검색은 지도 서비스에 잘못 등록된 업체 정보와 매칭될 수 있어, 주소 지오코딩이 더 안정적이다.)
- * NEXT_PUBLIC_KAKAO_MAP_API_KEY 필요 (Kakao Developers → JavaScript 키, 도메인 등록 필수).
+ * 네이버맵 임베드 — 지도는 클라이언트에서 렌더링하고,
+ * 정확한 좌표는 서버 라우트(/api/geocode)에서 Client Secret으로 지오코딩해 가져온다
+ * (네이버 지오코딩 API는 Secret이 필요해 클라이언트에서 직접 호출할 수 없음).
+ * 실패 시 content/company.ts의 폴백 좌표를 사용한다.
+ * NEXT_PUBLIC_NAVER_MAP_CLIENT_ID 필요 (NCP 콘솔 → Maps → Application, Web 서비스 URL 등록 필수).
  * PRD §4.2.3, §12 오픈 이슈 / Task 5.4
  */
 export default function MapEmbed() {
@@ -27,56 +29,41 @@ export default function MapEmbed() {
   const mapRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<Status>("loading");
 
-  function initMap() {
-    const kakao = window.kakao;
-    if (!mapRef.current || !kakao?.maps) return;
+  async function initMap() {
+    const naver = window.naver;
+    if (!mapRef.current || !naver?.maps) return;
 
-    const { lat, lng } = companyInfo.coordinates;
-    const map = new kakao.maps.Map(mapRef.current, {
-      center: new kakao.maps.LatLng(lat, lng),
-      level: 4,
-    });
-
-    function placeMarker(coords: any, label: string) {
-      new kakao.maps.Marker({ position: coords, map });
-      // InfoWindow는 콘텐츠 크기와 무관하게 박스 너비를 150px로 고정하므로,
-      // 콘텐츠 크기에 맞춰 자동으로 폭이 정해지는 CustomOverlay를 사용한다.
-      const overlay = new kakao.maps.CustomOverlay({
-        position: coords,
-        yAnchor: 1.55,
-        content: `<div style="display:inline-block;padding:5px 10px;font-size:13px;font-weight:600;line-height:1.2;white-space:nowrap;background:#fff;border:1px solid #7681a8;border-radius:4px;color:#1C1C1A;">${label}</div>`,
-      });
-      overlay.setMap(map);
-    }
-
-    if (!kakao.maps.services) {
-      placeMarker(map.getCenter(), "STEADYVIEW");
-      setStatus("ready");
-      return;
-    }
-
-    const geocoder = new kakao.maps.services.Geocoder();
-    geocoder.addressSearch(companyInfo.addressKo, (result: any[], geoStatus: string) => {
-      if (geoStatus === kakao.maps.services.Status.OK && result[0]) {
-        const coords = new kakao.maps.LatLng(Number(result[0].y), Number(result[0].x));
-        map.setCenter(coords);
-        placeMarker(coords, "STEADYVIEW");
-      } else {
-        placeMarker(map.getCenter(), "STEADYVIEW");
+    let { lat, lng } = companyInfo.coordinates;
+    try {
+      const res = await fetch("/api/geocode");
+      const data = await res.json();
+      if (data.success) {
+        lat = data.lat;
+        lng = data.lng;
       }
-      setStatus("ready");
+    } catch {
+      // 지오코딩 실패 시 폴백 좌표 사용
+    }
+
+    const coords = new naver.maps.LatLng(lat, lng);
+    const map = new naver.maps.Map(mapRef.current, {
+      center: coords,
+      zoom: 16,
     });
+
+    new naver.maps.Marker({
+      position: coords,
+      map,
+      icon: {
+        content: `<div style="display:inline-block;padding:5px 10px;font-size:13px;font-weight:600;line-height:1.2;white-space:nowrap;background:#fff;border:1px solid #7681a8;border-radius:4px;color:#1C1C1A;transform:translate(-50%,-140%);">STEADYVIEW</div>`,
+        anchor: new naver.maps.Point(0, 0),
+      },
+    });
+
+    setStatus("ready");
   }
 
-  useEffect(() => {
-    if (!KAKAO_KEY) return;
-    if (window.kakao?.maps) {
-      window.kakao.maps.load(initMap);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  if (!KAKAO_KEY) {
+  if (!NAVER_CLIENT_ID) {
     return (
       <div>
         <div className="flex h-[360px] w-full items-center justify-center rounded-lg border border-dashed border-border bg-surface-muted px-6 text-center text-sm text-text-muted md:h-[440px]">
@@ -90,9 +77,9 @@ export default function MapEmbed() {
   return (
     <div>
       <Script
-        src={`https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false&libraries=services`}
+        src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${NAVER_CLIENT_ID}`}
         strategy="afterInteractive"
-        onLoad={() => window.kakao.maps.load(initMap)}
+        onLoad={() => initMap()}
         onError={() => setStatus("error")}
       />
       <div className="relative overflow-hidden rounded-lg border border-border">
