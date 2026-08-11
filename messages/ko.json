@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "STEADYVIEW — 머신비전 AOI·X-ray AXI 자동화검사 솔루션",
-    "description": "머신비전 기반 2D검사·3D검사(AOI)와 산업용 X-ray 검사장비(AXI)를 개발·공급하는 B2B 기업 STEADYVIEW. 인라인검사부터 자동화검사까지 지원합니다."
+    "title": "STEADYVIEW — 머신비전 AOI·X-ray AXI 자동화검사",
+    "description": "머신비전 2D·3D검사(AOI)와 산업용 X-ray 검사장비(AXI) 개발·공급 기업 STEADYVIEW. 인라인·자동화검사를 지원합니다."
   },
   "ProductMeta": {
     "vision2dTitle": "2D 머신비전 검사 시스템 (AOI)",
