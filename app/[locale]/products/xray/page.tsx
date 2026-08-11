@@ -11,8 +11,8 @@ export async function generateMetadata(props: {
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { locale } = await props.params;
-  const t = await getTranslations({ locale, namespace: "Nav" });
-  const title = t("productXray");
+  const t = await getTranslations({ locale, namespace: "ProductMeta" });
+  const title = t("xrayTitle");
   const description = products.xray.overview[locale as Locale];
   return {
     title,
@@ -25,12 +25,14 @@ export async function generateMetadata(props: {
 export default async function ProductXrayPage(props: { params: Promise<Params> }) {
   const { locale } = await props.params;
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "ProductMeta" });
 
   return (
     <ProductPageTemplate
       product={products.xray}
       locale={locale as Locale}
       navKey="productXray"
+      title={t("xrayTitle")}
     />
   );
 }

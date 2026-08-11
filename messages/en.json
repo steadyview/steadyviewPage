@@ -1,7 +1,12 @@
 {
   "Metadata": {
-    "title": "STEADYVIEW — Precision Inspection Solutions",
-    "description": "STEADYVIEW is a B2B company developing 2D/3D machine vision and industrial X-ray inspection equipment."
+    "title": "STEADYVIEW — Machine Vision AOI & X-ray AXI Automated Inspection",
+    "description": "STEADYVIEW is a B2B company developing machine vision-based 2D and 3D inspection (AOI) and industrial X-ray inspection equipment (AXI) — from in-line inspection to fully automated inspection."
+  },
+  "ProductMeta": {
+    "vision2dTitle": "2D Machine Vision Inspection System (AOI)",
+    "vision3dTitle": "3D Machine Vision Inspection System (Automated Inspection)",
+    "xrayTitle": "Industrial X-ray Inspection Equipment (AXI)"
   },
   "Nav": {
     "home": "Home",
@@ -25,7 +30,8 @@
   "HomePage": {
     "eyebrow": "Precision Inspection Solutions",
     "tagline": "Unwavering Vision, Clear Direction",
-    "intro": "STEADYVIEW engineers 2D/3D machine vision and industrial X-ray inspection equipment that protects quality on battery and semiconductor production lines, catching micro defects that are easy to miss.",
+    "intro": "STEADYVIEW precision-engineers machine vision-based 2D and 3D inspection systems and industrial X-ray (AXI) inspection equipment that protect quality on battery and semiconductor production lines. From AOI in-line inspection to non-destructive X-ray inspection, our proven optical technology delivers automated inspection that catches even the finest defects.",
+    "seoHeading": "STEADYVIEW — Machine vision-based AOI in-line inspection, 2D and 3D inspection, and X-ray AXI inspection equipment for fully automated inspection solutions",
     "keywordPrecision": "Precision Inspection",
     "keywordVision": "Machine Vision",
     "keywordXray": "Industrial X-ray",
@@ -37,15 +43,15 @@
     "ctaBannerButton": "Get a Quote →"
   },
   "HomeHero": {
-    "slide1Kicker": "Battery Inspection",
+    "slide1Kicker": "Battery AOI Inspection",
     "slide1Title": "2D Machine Vision Catches Micro Defects",
     "slide1Desc": "High-speed, high-precision inspection of secondary battery cap and electrode surfaces.",
     "slide1Cta": "Explore 2D Vision",
-    "slide2Kicker": "Industrial X-ray Inspection",
+    "slide2Kicker": "Industrial X-ray (AXI) Inspection",
     "slide2Title": "See Inside, Non-Destructively",
     "slide2Desc": "X-ray CT inspects internal defects and foreign material in batteries without damage.",
     "slide2Cta": "Explore X-ray",
-    "slide3Kicker": "3D Semiconductor Inspection",
+    "slide3Kicker": "3D Semiconductor Automated Inspection",
     "slide3Title": "A New Standard in 3D Measurement",
     "slide3Desc": "High-precision 3D shape measurement detects bump and surface defects on semiconductors.",
     "slide3Cta": "Explore 3D Vision",
@@ -57,7 +63,7 @@
   },
   "AboutPage": {
     "kicker": "About",
-    "heroIntro": "STEADYVIEW builds trust in precision inspection through 2D/3D machine vision and industrial X-ray equipment.",
+    "heroIntro": "STEADYVIEW builds trust in in-line and automated inspection through machine vision-based 2D and 3D inspection (AOI) and industrial X-ray (AXI) equipment.",
     "promiseSteadyTitle": "Steady (Unwavering Precision)",
     "promiseSteadyBody": "With flawless 3D analysis that tolerates no margin of error and X-ray technology that sees into the deepest corners, we guarantee the highest inspection accuracy — steady even in the harshest manufacturing environments.",
     "promiseViewTitle": "View (A Forward-Looking Vision)",
@@ -71,7 +77,7 @@
     "greetingHello": "Hello,",
     "intro": "I am the CEO of STEADYVIEW Co., Ltd.",
     "body1": "Today's global manufacturing industry demands stricter quality control than ever, as nanoscale processes converge with advanced technology. In an era when a single microscopic defect can determine the safety of an entire system, flawless inspection is no longer optional — it is a survival strategy for every enterprise.",
-    "body2": "STEADYVIEW meets this demand as an industrial inspection equipment company providing ultra-precision machine vision, 3D, and X-ray inspection solutions that see beyond the limits of the human eye.",
+    "body2": "STEADYVIEW meets this demand as an industrial inspection equipment company providing ultra-precision machine vision-based 2D and 3D inspection (AOI) and X-ray (AXI) inspection solutions that see beyond the limits of the human eye — spanning in-line inspection to fully automated inspection.",
     "promiseLead": "Our company name, \"STEADYVIEW,\" carries two firm commitments.",
     "promiseSteadyTitle": "Steady (Unwavering Precision)",
     "promiseSteadyBody": "With flawless 3D analysis that tolerates no margin of error and X-ray technology that sees into the deepest corners, we guarantee the highest inspection accuracy — steady even in the harshest manufacturing environments.",

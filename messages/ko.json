@@ -1,7 +1,12 @@
 {
   "Metadata": {
-    "title": "STEADYVIEW — 정밀 검사 솔루션",
-    "description": "2D·3D 머신비전과 산업용 X-ray 검사장비를 개발·공급하는 B2B 기업 STEADYVIEW."
+    "title": "STEADYVIEW — 머신비전 AOI·X-ray AXI 자동화검사 솔루션",
+    "description": "머신비전 기반 2D검사·3D검사(AOI)와 산업용 X-ray 검사장비(AXI)를 개발·공급하는 B2B 기업 STEADYVIEW. 인라인검사부터 자동화검사까지 지원합니다."
+  },
+  "ProductMeta": {
+    "vision2dTitle": "2D 머신비전 검사 시스템 (AOI)",
+    "vision3dTitle": "3D 머신비전 검사 시스템 (자동화검사)",
+    "xrayTitle": "산업용 X-ray 검사장비 (AXI)"
   },
   "Nav": {
     "home": "홈",
@@ -25,7 +30,8 @@
   "HomePage": {
     "eyebrow": "정밀 검사 솔루션",
     "tagline": "흔들림 없는 시야, 명확한 방향",
-    "intro": "STEADYVIEW는 2D·3D 머신비전과 산업용 X-ray 검사장비를 정밀하게 설계하여, 2차전지·반도체 제조 현장의 품질을 지킵니다. 축적된 광학 기술로 놓치기 쉬운 미세 결함까지 정확하게 검출합니다.",
+    "intro": "STEADYVIEW는 머신비전 기반 2D검사·3D검사 장비와 산업용 X-ray(AXI) 검사장비를 정밀하게 설계하여, 2차전지·반도체 제조 현장의 품질을 지킵니다. AOI 인라인검사부터 비파괴 X-ray 검사까지, 축적된 광학 기술로 놓치기 쉬운 미세 결함까지 정확하게 검출하는 자동화검사를 구현합니다.",
+    "seoHeading": "STEADYVIEW — 머신비전 기반 AOI 인라인검사, 2D검사·3D검사, X-ray 검사·AXI 검사장비까지 아우르는 자동화검사 솔루션 전문기업",
     "keywordPrecision": "정밀 검사",
     "keywordVision": "머신비전",
     "keywordXray": "산업용 X-ray",
@@ -37,15 +43,15 @@
     "ctaBannerButton": "견적문의 하기 →"
   },
   "HomeHero": {
-    "slide1Kicker": "2차전지 검사",
+    "slide1Kicker": "2차전지 AOI 검사",
     "slide1Title": "2D 머신비전으로 잡아내는 미세 결함",
     "slide1Desc": "2차전지 캡·전극 공정의 표면 결함을 고속·고정밀로 검사합니다.",
     "slide1Cta": "2D 비전 자세히 보기",
-    "slide2Kicker": "산업용 X-ray 검사",
+    "slide2Kicker": "산업용 X-ray(AXI) 검사",
     "slide2Title": "비파괴로 들여다보는 내부 구조",
     "slide2Desc": "X-ray CT로 2차전지 내부 결함과 이물질을 비파괴로 검사합니다.",
     "slide2Cta": "X-ray 자세히 보기",
-    "slide3Kicker": "3D 반도체 검사",
+    "slide3Kicker": "3D 반도체 자동화검사",
     "slide3Title": "3D 형상 측정의 새로운 기준",
     "slide3Desc": "고정밀 3D 형상 측정으로 반도체 범프·외관 결함을 검출합니다.",
     "slide3Cta": "3D 비전 자세히 보기",
@@ -57,7 +63,7 @@
   },
   "AboutPage": {
     "kicker": "회사소개",
-    "heroIntro": "STEADYVIEW는 2D·3D 머신비전과 산업용 X-ray 검사장비로 정밀 검사의 신뢰를 만듭니다.",
+    "heroIntro": "STEADYVIEW는 머신비전 기반 2D검사·3D검사(AOI)와 산업용 X-ray(AXI) 검사장비로, 인라인검사·자동화검사의 신뢰를 만듭니다.",
     "promiseSteadyTitle": "Steady (흔들림 없는 정확함)",
     "promiseSteadyBody": "미세한 오차도 허용하지 않는 완벽한 3D 입체 분석과 내밀한 곳까지 투시하는 X-ray 기술로, 어떤 가혹한 제조 환경에서도 흔들리지 않는 최고의 검사 정확도를 보장합니다.",
     "promiseViewTitle": "View (미래를 바라보는 시선)",
@@ -71,7 +77,7 @@
     "greetingHello": "안녕하세요",
     "intro": "주식회사 STEADYVIEW 대표이사 입니다.",
     "body1": "오늘날 글로벌 제조업은 나노 단위의 미세 공정과 고도의 첨단 기술이 융합되며 그 어느 때보다 엄격한 품질 관리를 요구하고 있습니다. 아주 작은 결함 하나가 거대한 시스템의 안전을 좌우하는 시대, 완벽한 검사는 선택이 아닌 기업의 생존 전략입니다.",
-    "body2": "저희 STEADYVIEW(스테디뷰)는 이러한 시대적 요구에 부응하여, 인간의 눈을 넘어선 초정밀 머신비전 3D 및 X-ray 검사 솔루션을 제공하는 산업용 검사장비 전문 기업입니다.",
+    "body2": "저희 STEADYVIEW(스테디뷰)는 이러한 시대적 요구에 부응하여, 인간의 눈을 넘어선 초정밀 머신비전 기반 2D검사·3D검사(AOI)와 X-ray(AXI) 검사 솔루션을 제공하며, 인라인검사부터 자동화검사까지 아우르는 산업용 검사장비 전문 기업입니다.",
     "promiseLead": "우리 회사의 이름인 'STEADYVIEW'에는 두 가지 확고한 약속이 담겨 있습니다.",
     "promiseSteadyTitle": "Steady (흔들림 없는 정확함)",
     "promiseSteadyBody": "미세한 오차도 허용하지 않는 완벽한 3D 입체 분석과 내밀한 곳까지 투시하는 X-ray 기술로, 어떤 가혹한 제조 환경에서도 흔들리지 않는 최고의 검사 정확도를 보장합니다.",

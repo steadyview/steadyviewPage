@@ -22,13 +22,14 @@ export default async function ProductPageTemplate({
   product,
   locale,
   navKey,
+  title,
 }: {
   product: ProductData;
   locale: Locale;
   navKey: "product2d" | "product3d" | "productXray";
+  title: string;
 }) {
   const tNav = await getTranslations("Nav");
-  const title = tNav(navKey);
 
   return (
     <main>

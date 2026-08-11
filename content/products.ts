@@ -22,17 +22,17 @@ export const products: Record<ProductId, ProductData> = {
     id: "2d-vision",
     heroImage: "/images/hero/hero-2d-vision.jpg",
     overview: {
-      ko: "2D 머신비전 검사 시스템은 고해상도 카메라와 자체 영상처리 알고리즘으로 2차전지·전자부품 표면의 미세 결함을 고속으로 검출합니다.",
-      en: "The 2D machine vision inspection system uses high-resolution cameras and proprietary image-processing algorithms to detect micro surface defects on batteries and electronic components at high speed.",
-      zh: "2D 机器视觉检测系统采用高分辨率相机与自主图像处理算法，高速检测二次电池及电子零部件表面的微小缺陷。",
+      ko: "2D 머신비전 AOI(자동광학검사) 시스템은 고해상도 카메라와 자체 영상처리 알고리즘으로 2차전지·전자부품 표면의 미세 결함을 생산 라인에서 인라인으로 고속 검출하는 자동화검사 솔루션입니다.",
+      en: "The 2D machine vision AOI (Automated Optical Inspection) system uses high-resolution cameras and proprietary image-processing algorithms to detect micro surface defects on batteries and electronic components in-line, delivering fully automated inspection at high speed.",
+      zh: "2D 机器视觉 AOI（自动光学检测）系统采用高分辨率相机与自主图像处理算法，在产线上进行在线（in-line）高速检测，实现二次电池及电子零部件表面微小缺陷的自动化检测。",
     },
     features: [
       {
         title: { ko: "고속 라인 스캔", en: "High-speed Line Scan", zh: "高速线扫描" },
         body: {
-          ko: "생산 라인 속도에 맞춘 고속 스캔으로 검사 사이클 타임을 최소화합니다.",
-          en: "High-speed scanning matched to line speed minimizes inspection cycle time.",
-          zh: "与产线速度匹配的高速扫描，最大限度缩短检测节拍。",
+          ko: "생산 라인 속도에 맞춘 인라인(In-line) 고속 스캔으로 검사 사이클 타임을 최소화합니다.",
+          en: "In-line, high-speed scanning matched to line speed minimizes inspection cycle time.",
+          zh: "与产线速度匹配的在线（in-line）高速扫描，最大限度缩短检测节拍。",
         },
       },
       {
@@ -80,9 +80,9 @@ export const products: Record<ProductId, ProductData> = {
     id: "3d-vision",
     heroImage: "/images/hero/hero-3d-scan-v2.png",
     overview: {
-      ko: "3D 머신비전 검사 시스템은 고정밀 3D 형상 측정 기술로 반도체 범프·외관의 미세한 높이·형상 결함까지 정확하게 검출합니다.",
-      en: "The 3D machine vision inspection system uses high-precision 3D shape measurement to accurately detect subtle height and shape defects on semiconductor bumps and surfaces.",
-      zh: "3D 机器视觉检测系统采用高精度 3D 形貌测量技术，精准检测半导体凸点与外观的微小高度及形状缺陷。",
+      ko: "3D 머신비전 검사 시스템은 고정밀 3D 형상 측정 기술로 반도체 범프·외관의 미세한 높이·형상 결함까지 정확하게 검출하는 자동화검사 솔루션입니다.",
+      en: "The 3D machine vision inspection system uses high-precision 3D shape measurement to accurately detect subtle height and shape defects on semiconductor bumps and surfaces — a fully automated inspection solution.",
+      zh: "3D 机器视觉检测系统采用高精度 3D 形貌测量技术，精准检测半导体凸点与外观的微小高度及形状缺陷，是一套自动化检测解决方案。",
     },
     features: [
       {
@@ -137,9 +137,9 @@ export const products: Record<ProductId, ProductData> = {
     id: "xray",
     heroImage: "/images/hero/hero-xray-ct-v2.png",
     overview: {
-      ko: "산업용 X-ray 검사장비는 비파괴 방식으로 제품 내부 구조를 투시하여, 2차전지·반도체 내부의 결함과 이물질을 안전하게 검출합니다.",
-      en: "Industrial X-ray inspection equipment non-destructively images internal structures to safely detect defects and foreign material inside batteries and semiconductors.",
-      zh: "工业 X 射线检测设备以非破坏方式透视产品内部结构，安全检测二次电池与半导体内部的缺陷及异物。",
+      ko: "산업용 X-ray 검사장비(AXI)는 비파괴 방식으로 제품 내부 구조를 투시하여, 2차전지·반도체 내부의 결함과 이물질을 자동화검사로 안전하게 검출합니다.",
+      en: "Industrial X-ray inspection equipment (AXI, Automated X-ray Inspection) non-destructively images internal structures to safely detect defects and foreign material inside batteries and semiconductors through automated inspection.",
+      zh: "工业 X 射线检测设备（AXI 自动 X 射线检测）以非破坏方式透视产品内部结构，通过自动化检测安全识别二次电池与半导体内部的缺陷及异物。",
     },
     features: [
       {

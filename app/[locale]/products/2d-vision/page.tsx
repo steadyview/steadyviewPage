@@ -11,8 +11,8 @@ export async function generateMetadata(props: {
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { locale } = await props.params;
-  const t = await getTranslations({ locale, namespace: "Nav" });
-  const title = t("product2d");
+  const t = await getTranslations({ locale, namespace: "ProductMeta" });
+  const title = t("vision2dTitle");
   const description = products["2d-vision"].overview[locale as Locale];
   return {
     title,
@@ -25,12 +25,14 @@ export async function generateMetadata(props: {
 export default async function Product2DPage(props: { params: Promise<Params> }) {
   const { locale } = await props.params;
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "ProductMeta" });
 
   return (
     <ProductPageTemplate
       product={products["2d-vision"]}
       locale={locale as Locale}
       navKey="product2d"
+      title={t("vision2dTitle")}
     />
   );
 }

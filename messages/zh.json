@@ -1,7 +1,12 @@
 {
   "Metadata": {
-    "title": "STEADYVIEW — 精密检测解决方案",
-    "description": "STEADYVIEW 是一家研发并供应 2D/3D 机器视觉及工业 X 射线检测设备的 B2B 企业。"
+    "title": "STEADYVIEW — 机器视觉 AOI · X 射线 AXI 自动化检测方案",
+    "description": "STEADYVIEW 是一家研发并供应基于机器视觉的 2D 检测与 3D 检测（AOI）及工业 X 射线检测设备（AXI）的 B2B 企业，覆盖在线检测到自动化检测。"
+  },
+  "ProductMeta": {
+    "vision2dTitle": "2D 机器视觉检测系统（AOI）",
+    "vision3dTitle": "3D 机器视觉检测系统（自动化检测）",
+    "xrayTitle": "工业 X 射线检测设备（AXI）"
   },
   "Nav": {
     "home": "首页",
@@ -25,7 +30,8 @@
   "HomePage": {
     "eyebrow": "精密检测解决方案",
     "tagline": "稳定视野，清晰方向",
-    "intro": "STEADYVIEW 精心研发 2D/3D 机器视觉及工业 X 射线检测设备，守护二次电池与半导体制造现场的品质，精准捕捉容易遗漏的微小缺陷。",
+    "intro": "STEADYVIEW 精心打造基于机器视觉的 2D 检测与 3D 检测设备，以及工业 X 射线（AXI）检测设备，守护二次电池与半导体制造现场的品质。从 AOI 在线检测到无损 X 射线检测，凭借深厚的光学技术积累，实现精准捕捉细微缺陷的自动化检测。",
+    "seoHeading": "STEADYVIEW — 基于机器视觉的 AOI 在线检测、2D 检测与 3D 检测，以及 X 射线 AXI 检测设备，打造全自动化检测解决方案",
     "keywordPrecision": "精密检测",
     "keywordVision": "机器视觉",
     "keywordXray": "工业 X 射线",
@@ -37,15 +43,15 @@
     "ctaBannerButton": "获取报价 →"
   },
   "HomeHero": {
-    "slide1Kicker": "二次电池检测",
+    "slide1Kicker": "二次电池 AOI 检测",
     "slide1Title": "2D 机器视觉捕捉微小缺陷",
     "slide1Desc": "高速高精度检测二次电池端盖与电极表面缺陷。",
     "slide1Cta": "了解 2D 视觉",
-    "slide2Kicker": "工业 X 射线检测",
+    "slide2Kicker": "工业 X 射线（AXI）检测",
     "slide2Title": "非破坏性透视内部结构",
     "slide2Desc": "X 射线 CT 以非破坏方式检测电池内部缺陷与异物。",
     "slide2Cta": "了解 X 射线",
-    "slide3Kicker": "3D 半导体检测",
+    "slide3Kicker": "3D 半导体自动化检测",
     "slide3Title": "3D 形貌测量新标准",
     "slide3Desc": "高精度 3D 形貌测量检测半导体凸点与外观缺陷。",
     "slide3Cta": "了解 3D 视觉",
@@ -57,7 +63,7 @@
   },
   "AboutPage": {
     "kicker": "公司介绍",
-    "heroIntro": "STEADYVIEW 通过 2D/3D 机器视觉与工业 X 射线检测设备，缔造精密检测的信赖。",
+    "heroIntro": "STEADYVIEW 通过基于机器视觉的 2D 检测与 3D 检测（AOI）以及工业 X 射线（AXI）检测设备，缔造在线检测与自动化检测的信赖。",
     "promiseSteadyTitle": "Steady（稳定精准）",
     "promiseSteadyBody": "凭借不容许任何微小误差的完美 3D 立体分析，以及可透视至最深处的 X 射线技术，即使在最严苛的制造环境中，也能保证始终如一的最高检测精度。",
     "promiseViewTitle": "View（洞察未来的视野）",
@@ -71,7 +77,7 @@
     "greetingHello": "您好，",
     "intro": "我是STEADYVIEW株式会社的代表理事（CEO）。",
     "body1": "如今，全球制造业正随着纳米级精密工艺与高端技术的融合，面临比以往任何时候都更严格的品质管理要求。在微小缺陷足以左右整个系统安全的时代，完美的检测已不再是选择，而是企业生存的战略。",
-    "body2": "我们STEADYVIEW正是为顺应这一时代需求而生的工业检测设备专业企业，提供超越人眼极限的超精密机器视觉、3D 及 X 射线检测解决方案。",
+    "body2": "我们STEADYVIEW正是为顺应这一时代需求而生的工业检测设备专业企业，提供超越人眼极限的超精密机器视觉 2D 检测与 3D 检测（AOI）及 X 射线（AXI）检测解决方案，业务涵盖在线检测到自动化检测。",
     "promiseLead": "我们公司名称「STEADYVIEW」中蕴含着两项坚定的承诺。",
     "promiseSteadyTitle": "Steady（稳定精准）",
     "promiseSteadyBody": "凭借不容许任何微小误差的完美 3D 立体分析，以及可透视至最深处的 X 射线技术，即使在最严苛的制造环境中，也能保证始终如一的最高检测精度。",

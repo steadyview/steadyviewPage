@@ -17,6 +17,44 @@ export function generateStaticParams() {
 
 const OG_LOCALE_MAP: Record<Locale, string> = { ko: "ko_KR", en: "en_US", zh: "zh_CN" };
 
+/** 검색엔진 대상 핵심 타겟 키워드 (구글/네이버 검색 노출용). */
+const SEO_KEYWORDS: Record<Locale, string[]> = {
+  ko: [
+    "머신비전",
+    "인라인검사",
+    "자동화검사",
+    "2D검사",
+    "3D검사",
+    "AOI",
+    "X-ray",
+    "X-ray 검사",
+    "AXI",
+    "산업용 X-ray 검사장비",
+  ],
+  en: [
+    "machine vision",
+    "in-line inspection",
+    "automated inspection",
+    "2D inspection",
+    "3D inspection",
+    "AOI",
+    "X-ray inspection",
+    "AXI",
+    "industrial X-ray inspection equipment",
+  ],
+  zh: [
+    "机器视觉",
+    "在线检测",
+    "自动化检测",
+    "2D检测",
+    "3D检测",
+    "AOI",
+    "X射线检测",
+    "AXI",
+    "工业X射线检测设备",
+  ],
+};
+
 export async function generateMetadata(props: {
   params: Promise<LocaleParams>;
 }): Promise<Metadata> {
@@ -32,6 +70,7 @@ export async function generateMetadata(props: {
       template: "%s | STEADYVIEW",
     },
     description,
+    keywords: SEO_KEYWORDS[locale as Locale],
     alternates: buildAlternates("", locale as Locale),
     openGraph: {
       title,
